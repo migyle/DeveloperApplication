@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DeveloperApplication.Interface
 {
-    internal class Validation
+    class Validation
+    {
+        public static class UserValidation
     {
         public static bool ValidateName(string name, out string errorMessage)
         {
@@ -122,4 +124,5 @@ namespace DeveloperApplication.Interface
         }
 
     }
+        }
 }

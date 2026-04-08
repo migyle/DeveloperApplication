@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeveloperApplication.Interface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,12 +32,36 @@ namespace DeveloperApplication
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            developerTableAdapter1.verifyLogin(devApp1.Developer,txtEmail.Text,txtPassword.Text);
-            if (devApp1.Developer.Rows.Count == 1) { 
-                Globals.devID = devApp1.Developer.Rows[0].Field<int>("DeveloperID");
-                Globals.devName = devApp1.Developer.Rows[0].Field<string>("DeveloperName");
+            try {
+                developerTableAdapter1.verifyLogin(devApp1.Developer, txtEmail.Text, txtPassword.Text);
+                if (devApp1.Developer.Rows.Count == 1)
+                {
+                    Globals.devID = devApp1.Developer.Rows[0].Field<int>("devID");
+                    Globals.devName = devApp1.Developer.Rows[0].Field<string>("name");
+                    MessageBox.Show("Login successful! Welcome back, " + Globals.devName);
+                }
+                else if (devApp1.Developer.Rows.Count < 1)
+                {
+                    MessageBox.Show("Login failed! Please check your email and password and try again.");
+
+                }
+                else if (txtEmail.Text == "" || txtPassword.Text == "") {
+                    MessageBox.Show("Login failed! Please ensure that you have entered your Email and Password.");
+                }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred during login: \n" + ex.Message+"\nPlease try again.");
+            }
+   
+        }
+        
+        private void label2_Click(object sender, EventArgs e)
+        {
+         
+            this.Hide();
+            frmSignUp frmSignUp = new frmSignUp();
+            frmSignUp.Show();
         }
     }
 }
