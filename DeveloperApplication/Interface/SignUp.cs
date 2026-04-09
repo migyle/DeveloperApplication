@@ -94,5 +94,10 @@ namespace DeveloperApplication.Interface
                 MessageBox.Show("Something Went Wrong\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void frmSignUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

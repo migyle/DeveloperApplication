@@ -59,9 +59,9 @@ namespace DeveloperApplication
                     if (result == PasswordVerificationResult.Success)
                     {
                         Globals.devID = devApp1.Developer.Rows[0].Field<int>("devID");
-                        Globals.devName = devApp1.Developer.Rows[0].Field<string>("name");
+                        Globals.devName = devApp1.Developer.Rows[0].Field<string>("name") + " " + devApp1.Developer.Rows[0].Field<string>("surname");
 
-                        MessageBox.Show("Login successful! Welcome back, " + Globals.devName);
+                        MessageBox.Show("Login successful! Welcome back, " + devApp1.Developer.Rows[0].Field<string>("name"));
                     }
                     else
                     {

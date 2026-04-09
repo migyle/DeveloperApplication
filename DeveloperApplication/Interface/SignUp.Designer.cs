@@ -43,6 +43,8 @@
             this.developerTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
             this.devApp1 = new DeveloperApplication.DevApp();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtConfirmPass = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(617, 311);
+            this.label4.Location = new System.Drawing.Point(617, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 3;
@@ -86,7 +88,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(819, 311);
+            this.label5.Location = new System.Drawing.Point(626, 392);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 4;
@@ -108,21 +110,21 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(620, 352);
+            this.txtEmail.Location = new System.Drawing.Point(620, 330);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.Size = new System.Drawing.Size(252, 22);
             this.txtEmail.TabIndex = 7;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(822, 352);
+            this.txtPassword.Location = new System.Drawing.Point(629, 425);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(243, 22);
             this.txtPassword.TabIndex = 8;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(722, 453);
+            this.btnLogin.Location = new System.Drawing.Point(712, 541);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(91, 40);
             this.btnLogin.TabIndex = 9;
@@ -136,7 +138,7 @@
             this.lblLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblLogin.Location = new System.Drawing.Point(802, 496);
+            this.lblLogin.Location = new System.Drawing.Point(809, 596);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(70, 16);
             this.lblLogin.TabIndex = 11;
@@ -146,7 +148,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(639, 496);
+            this.label6.Location = new System.Drawing.Point(641, 596);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(162, 16);
             this.label6.TabIndex = 10;
@@ -163,17 +165,35 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(928, 352);
+            this.pictureBox1.Location = new System.Drawing.Point(914, 425);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 33);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(626, 469);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 16);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "confirm password";
+            // 
+            // txtConfirmPass
+            // 
+            this.txtConfirmPass.Location = new System.Drawing.Point(629, 500);
+            this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.Size = new System.Drawing.Size(243, 22);
+            this.txtConfirmPass.TabIndex = 14;
             // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 713);
+            this.Controls.Add(this.txtConfirmPass);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.label6);
@@ -190,6 +210,7 @@
             this.Name = "frmSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
+            this.Load += new System.EventHandler(this.frmSignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -214,5 +235,7 @@
         private DevAppTableAdapters.DeveloperTableAdapter developerTableAdapter1;
         private DevApp devApp1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtConfirmPass;
     }
 }
