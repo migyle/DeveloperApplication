@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblSignUp = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblForgotPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,17 +67,15 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(675, 259);
-            this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(227, 34);
+            this.txtEmail.Size = new System.Drawing.Size(227, 22);
             this.txtEmail.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(675, 387);
-            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(227, 35);
+            this.txtPassword.Size = new System.Drawing.Size(227, 22);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
@@ -133,11 +132,25 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // lblForgotPassword
+            // 
+            this.lblForgotPassword.AutoSize = true;
+            this.lblForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblForgotPassword.Location = new System.Drawing.Point(672, 425);
+            this.lblForgotPassword.Name = "lblForgotPassword";
+            this.lblForgotPassword.Size = new System.Drawing.Size(110, 16);
+            this.lblForgotPassword.TabIndex = 8;
+            this.lblForgotPassword.Text = "forgot password?";
+            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 713);
+            this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.label1);
@@ -171,6 +184,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSignUp;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblForgotPassword;
     }
 }
 

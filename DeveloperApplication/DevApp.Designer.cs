@@ -611,7 +611,7 @@ namespace DeveloperApplication {
                 this.columnemail.AllowDBNull = false;
                 this.columnemail.MaxLength = 50;
                 this.columnpassword.AllowDBNull = false;
-                this.columnpassword.MaxLength = 50;
+                this.columnpassword.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2943,8 +2943,7 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Developer.*\r\nFROM     Developer \r\nWHERE email=@email AND password=@passwor" +
-                "d";
+            this._commandCollection[2].CommandText = "SELECT Developer.*\r\nFROM     Developer \r\nWHERE email=@email";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@email";
@@ -2953,14 +2952,6 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "email";
-            this._commandCollection[2].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@password";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "password";
             this._commandCollection[2].Parameters.Add(param);
         }
         
@@ -2992,19 +2983,13 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int verifyLogin(DevApp.DeveloperDataTable dataTable, string email, string password) {
+        public virtual int VerifyEmail(DevApp.DeveloperDataTable dataTable, string email) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(email));
-            }
-            if ((password == null)) {
-                throw new global::System.ArgumentNullException("password");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(password));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3017,19 +3002,13 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DevApp.DeveloperDataTable GetDataBy(string email, string password) {
+        public virtual DevApp.DeveloperDataTable GetDataBy1(string email) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(email));
-            }
-            if ((password == null)) {
-                throw new global::System.ArgumentNullException("password");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(password));
             }
             DevApp.DeveloperDataTable dataTable = new DevApp.DeveloperDataTable();
             this.Adapter.Fill(dataTable);

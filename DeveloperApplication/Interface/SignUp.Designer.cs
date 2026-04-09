@@ -42,7 +42,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.developerTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
             this.devApp1 = new DeveloperApplication.DevApp();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(618, 302);
+            this.label4.Location = new System.Drawing.Point(617, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 3;
@@ -106,7 +108,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(621, 340);
+            this.txtEmail.Location = new System.Drawing.Point(620, 352);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 22);
             this.txtEmail.TabIndex = 7;
@@ -120,11 +122,11 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(726, 453);
+            this.btnLogin.Location = new System.Drawing.Point(722, 453);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 27);
+            this.btnLogin.Size = new System.Drawing.Size(91, 40);
             this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Sign Up";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -159,11 +161,20 @@
             this.devApp1.DataSetName = "DevApp";
             this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(928, 352);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 33);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 713);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnLogin);
@@ -180,6 +191,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +213,6 @@
         private System.Windows.Forms.Label label6;
         private DevAppTableAdapters.DeveloperTableAdapter developerTableAdapter1;
         private DevApp devApp1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

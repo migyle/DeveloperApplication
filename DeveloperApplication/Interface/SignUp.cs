@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DeveloperApplication.Interface.Validation;
+using Microsoft.AspNetCore.Identity;
 
 
 namespace DeveloperApplication.Interface
@@ -70,7 +71,12 @@ namespace DeveloperApplication.Interface
             
                 if (er == false)
                 {
-                    developerTableAdapter1.Insert(txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text);
+
+                    var hasher = new PasswordHasher<string>();
+                    // Hashes Password entered to save it securely in the database
+                    string hash = hasher.HashPassword(null, txtPassword.Text);
+
+                    developerTableAdapter1.Insert(txtName.Text, txtSurname.Text, txtEmail.Text, hash);
                     MessageBox.Show("Developer Account Created Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();

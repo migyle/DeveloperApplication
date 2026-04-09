@@ -1,10 +1,12 @@
 ﻿using DeveloperApplication.Interface;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,28 +34,50 @@ namespace DeveloperApplication
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try {
-                developerTableAdapter1.verifyLogin(devApp1.Developer, txtEmail.Text, txtPassword.Text);
-                if (devApp1.Developer.Rows.Count == 1)
-                {
-                    Globals.devID = devApp1.Developer.Rows[0].Field<int>("devID");
-                    Globals.devName = devApp1.Developer.Rows[0].Field<string>("name");
-                    MessageBox.Show("Login successful! Welcome back, " + Globals.devName);
-                }
-                else if (devApp1.Developer.Rows.Count < 1)
-                {
-                    MessageBox.Show("Login failed! Please check your email and password and try again.");
 
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+                {
+                    MessageBox.Show("Please enter both Email and Password.");
+                    return;
                 }
-                else if (txtEmail.Text == "" || txtPassword.Text == "") {
-                    MessageBox.Show("Login failed! Please ensure that you have entered your Email and Password.");
+
+                var hasher = new PasswordHasher<string>();
+
+                // Retrieves user by email
+                developerTableAdapter1.VerifyEmail(devApp1.Developer, txtEmail.Text);
+
+                if (devApp1.Developer.Rows.Count > 0)
+                {
+                    // retrieves the stored hashed password from DB
+                    string storedHash = devApp1.Developer.Rows[0]["password"].ToString();
+
+                    // Verifies entered password against the stored hashed password
+                    var result = hasher.VerifyHashedPassword(null, storedHash, txtPassword.Text);
+
+                    if (result == PasswordVerificationResult.Success)
+                    {
+                        Globals.devID = devApp1.Developer.Rows[0].Field<int>("devID");
+                        Globals.devName = devApp1.Developer.Rows[0].Field<string>("name");
+
+                        MessageBox.Show("Login successful! Welcome back, " + Globals.devName);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed! Incorrect password.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Login failed! Email not found.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred during login: \n" + ex.Message+"\nPlease try again.");
+                MessageBox.Show("An error occurred during login:\n" + ex.Message);
             }
-   
+
         }
         
         private void label2_Click(object sender, EventArgs e)
@@ -62,6 +86,11 @@ namespace DeveloperApplication
             this.Hide();
             frmSignUp frmSignUp = new frmSignUp();
             frmSignUp.Show();
+        }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
