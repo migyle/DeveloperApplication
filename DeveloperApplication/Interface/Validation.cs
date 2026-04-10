@@ -72,31 +72,49 @@ namespace DeveloperApplication.Interface
 
 
 
-        ////Validate contact number.
-        ////10 digit only.
-        ////contact number must start with 0.
-        //public static bool ValidateContactNumber(string contactNumber, out string errorMessage)
-        //{
-        //    if (contactNumber.Length != 10 || !contactNumber.All(char.IsDigit))
-        //    {
-        //        errorMessage = "Contact number must be 10 digits long and numeric.";
-        //        return false;
-        //    }
+            //Validate contact number.
+            //10 digit only.
+            //contact number must start with 0.
+            public static bool ValidateContactNumber(string contactNumber, out string errorMessage)
+            {
+                if (contactNumber.Length != 10 || !contactNumber.All(char.IsDigit))
+                {
+                    errorMessage = "Contact number must be 10 digits long and numeric.";
+                    return false;
+                }
 
-        //    if (!contactNumber.StartsWith("0"))
-        //    {
-        //        errorMessage = "Contact number must start with a '0'.";
-        //        return false;
-        //    }
+                if (!contactNumber.StartsWith("0"))
+                {
+                    errorMessage = "Contact number must start with a '0'.";
+                    return false;
+                }
 
-        //    errorMessage = string.Empty;
-        //    return true;
-        //}
+                errorMessage = string.Empty;
+                return true;
+            }
+
+            public static bool ValidateDOB(DateTime dob, out string errorMessage) 
+            {
+                if (dob >= DateTime.Now)
+                {
+                    errorMessage = "Date of Birth must be in the past.";
+                    return false;
+                }
+                int age = DateTime.Now.Year - dob.Year;
+                if (dob > DateTime.Now.AddYears(-age)) age--;
+                if (age < 18)
+                {
+                    errorMessage = "You must be at least 18 years old to sign up.";
+                    return false;
+                }
+                errorMessage = string.Empty;
+                return true;
+            }
 
 
-        //Validate password
-        //Minimum: 8 characters, 2 numbers, 1 symbol.
-        public static bool ValidatePassword(string password, out string errorMessage)
+            //Validate password
+            //Minimum: 8 characters, 2 numbers, 1 symbol.
+            public static bool ValidatePassword(string password, out string errorMessage)
         {
             if (password.Length < 8)
             {

@@ -49,7 +49,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(740, 228);
+            this.lblEmail.Location = new System.Drawing.Point(1153, 250);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(95, 16);
             this.lblEmail.TabIndex = 0;
@@ -58,7 +58,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(740, 354);
+            this.lblPassword.Location = new System.Drawing.Point(1153, 376);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(67, 16);
             this.lblPassword.TabIndex = 1;
@@ -66,21 +66,23 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(675, 259);
+            this.txtEmail.Location = new System.Drawing.Point(1088, 281);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(227, 22);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.Text = "mjane@gmail.com";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(675, 387);
+            this.txtPassword.Location = new System.Drawing.Point(1088, 409);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(227, 22);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "MJ4n3!abc";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(743, 488);
+            this.btnLogin.Location = new System.Drawing.Point(1156, 510);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(97, 40);
             this.btnLogin.TabIndex = 4;
@@ -105,7 +107,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(697, 546);
+            this.label1.Location = new System.Drawing.Point(1110, 568);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 16);
             this.label1.TabIndex = 5;
@@ -117,7 +119,7 @@
             this.lblSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignUp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblSignUp.Location = new System.Drawing.Point(841, 546);
+            this.lblSignUp.Location = new System.Drawing.Point(1254, 568);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(86, 16);
             this.lblSignUp.TabIndex = 6;
@@ -126,7 +128,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(908, 387);
+            this.pictureBox1.Location = new System.Drawing.Point(1321, 409);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 35);
             this.pictureBox1.TabIndex = 7;
@@ -138,7 +140,7 @@
             this.lblForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblForgotPassword.Location = new System.Drawing.Point(672, 425);
+            this.lblForgotPassword.Location = new System.Drawing.Point(1085, 447);
             this.lblForgotPassword.Name = "lblForgotPassword";
             this.lblForgotPassword.Size = new System.Drawing.Size(110, 16);
             this.lblForgotPassword.TabIndex = 8;
@@ -149,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 713);
+            this.ClientSize = new System.Drawing.Size(1536, 842);
             this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSignUp);

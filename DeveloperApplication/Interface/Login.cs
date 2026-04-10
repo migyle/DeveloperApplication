@@ -1,4 +1,5 @@
-﻿using DeveloperApplication.Interface;
+﻿using DeveloperApplication.Business;
+using DeveloperApplication.Interface;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace DeveloperApplication
 {
@@ -28,8 +30,8 @@ namespace DeveloperApplication
         public static class Globals
         {
             public static int devID { get; set; } // Static variable to hold the developer ID  
-            public static string devName { get; set; }
-           
+            public static string devName { get; set; }// Static variable to hold the developer name  
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -61,7 +63,22 @@ namespace DeveloperApplication
                         Globals.devID = devApp1.Developer.Rows[0].Field<int>("devID");
                         Globals.devName = devApp1.Developer.Rows[0].Field<string>("name") + " " + devApp1.Developer.Rows[0].Field<string>("surname");
 
-                        MessageBox.Show("Login successful! Welcome back, " + devApp1.Developer.Rows[0].Field<string>("name"));
+                        MessageBox.Show("Login successful! Welcome, " + devApp1.Developer.Rows[0].Field<string>("name"));
+                       
+                        //frmHome home = get();
+                        //home.PerformLogin();
+
+
+                        
+
+                        frmMyProjects myProjects = new frmMyProjects();
+                        myProjects.MdiParent = this.MdiParent;
+                        myProjects.Show();
+
+                        frmHome mainForm = (frmHome)this.MdiParent;
+                        mainForm.PerformLogin();
+
+
                     }
                     else
                     {

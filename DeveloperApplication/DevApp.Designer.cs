@@ -429,6 +429,10 @@ namespace DeveloperApplication {
             
             private global::System.Data.DataColumn columnpassword;
             
+            private global::System.Data.DataColumn columndateOfBirth;
+            
+            private global::System.Data.DataColumn columncontactNumber;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public DeveloperDataTable() {
@@ -504,6 +508,22 @@ namespace DeveloperApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn dateOfBirthColumn {
+                get {
+                    return this.columndateOfBirth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn contactNumberColumn {
+                get {
+                    return this.columncontactNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -539,14 +559,16 @@ namespace DeveloperApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public DeveloperRow AddDeveloperRow(string name, string surname, string email, string password) {
+            public DeveloperRow AddDeveloperRow(string name, string surname, string email, string password, System.DateTime dateOfBirth, string contactNumber) {
                 DeveloperRow rowDeveloperRow = ((DeveloperRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         name,
                         surname,
                         email,
-                        password};
+                        password,
+                        dateOfBirth,
+                        contactNumber};
                 rowDeveloperRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeveloperRow);
                 return rowDeveloperRow;
@@ -581,6 +603,8 @@ namespace DeveloperApplication {
                 this.columnsurname = base.Columns["surname"];
                 this.columnemail = base.Columns["email"];
                 this.columnpassword = base.Columns["password"];
+                this.columndateOfBirth = base.Columns["dateOfBirth"];
+                this.columncontactNumber = base.Columns["contactNumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,6 +620,10 @@ namespace DeveloperApplication {
                 base.Columns.Add(this.columnemail);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
+                this.columndateOfBirth = new global::System.Data.DataColumn("dateOfBirth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateOfBirth);
+                this.columncontactNumber = new global::System.Data.DataColumn("contactNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontactNumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columndevID}, true));
                 this.columndevID.AutoIncrement = true;
@@ -612,6 +640,9 @@ namespace DeveloperApplication {
                 this.columnemail.MaxLength = 50;
                 this.columnpassword.AllowDBNull = false;
                 this.columnpassword.MaxLength = 255;
+                this.columndateOfBirth.AllowDBNull = false;
+                this.columncontactNumber.AllowDBNull = false;
+                this.columncontactNumber.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2130,6 +2161,28 @@ namespace DeveloperApplication {
                     this[this.tableDeveloper.passwordColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public System.DateTime dateOfBirth {
+                get {
+                    return ((global::System.DateTime)(this[this.tableDeveloper.dateOfBirthColumn]));
+                }
+                set {
+                    this[this.tableDeveloper.dateOfBirthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string contactNumber {
+                get {
+                    return ((string)(this[this.tableDeveloper.contactNumberColumn]));
+                }
+                set {
+                    this[this.tableDeveloper.contactNumberColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -2751,12 +2804,12 @@ namespace DeveloperApplication.DevAppTableAdapters {
             tableMapping.ColumnMappings.Add("surname", "surname");
             tableMapping.ColumnMappings.Add("email", "email");
             tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("dateOfBirth", "dateOfBirth");
+            tableMapping.ColumnMappings.Add("contactNumber", "contactNumber");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Developer] WHERE (([devID] = @Original_devID) AND ([name] = @Origina" +
-                "l_name) AND ([surname] = @Original_surname) AND ([email] = @Original_email) AND " +
-                "([password] = @Original_password))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Developer] WHERE (([devID] = @Original_devID) AND ([name] = @Original_name) AND ([surname] = @Original_surname) AND ([email] = @Original_email) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([contactNumber] = @Original_contactNumber) AND ([password] = @Original_password))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@Original_devID";
@@ -2791,18 +2844,32 @@ namespace DeveloperApplication.DevAppTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_contactNumber";
+            param.DbType = global::System.Data.DbType.AnsiStringFixedLength;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@Original_password";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.IsNullable = true;
             param.SourceColumn = "password";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Developer] ([name], [surname], [email], [password]) VALUES (@name, @" +
-                "surname, @email, @password);\r\nSELECT devID, name, surname, email, password FROM " +
-                "Developer WHERE (devID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Developer] ([name], [surname], [email], [dateOfBirth], [contactNumber], [password]) VALUES (@name, @surname, @email, @dateOfBirth, @contactNumber, @password);
+SELECT devID, name, surname, email, dateOfBirth, contactNumber, password FROM Developer WHERE (devID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@name";
@@ -2826,16 +2893,29 @@ namespace DeveloperApplication.DevAppTableAdapters {
             param.SourceColumn = "email";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@contactNumber";
+            param.DbType = global::System.Data.DbType.AnsiStringFixedLength;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@password";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.IsNullable = true;
             param.SourceColumn = "password";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Developer] SET [name] = @name, [surname] = @surname, [email] = @email, [password] = @password WHERE (([devID] = @Original_devID) AND ([name] = @Original_name) AND ([surname] = @Original_surname) AND ([email] = @Original_email) AND ([password] = @Original_password));
-SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Developer] SET [name] = @name, [surname] = @surname, [email] = @email, [dateOfBirth] = @dateOfBirth, [contactNumber] = @contactNumber, [password] = @password WHERE (([devID] = @Original_devID) AND ([name] = @Original_name) AND ([surname] = @Original_surname) AND ([email] = @Original_email) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([contactNumber] = @Original_contactNumber) AND ([password] = @Original_password));
+SELECT devID, name, surname, email, dateOfBirth, contactNumber, password FROM Developer WHERE (devID = @devID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@name";
@@ -2859,9 +2939,22 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             param.SourceColumn = "email";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@contactNumber";
+            param.DbType = global::System.Data.DbType.AnsiStringFixedLength;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@password";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.IsNullable = true;
             param.SourceColumn = "password";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -2898,9 +2991,24 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_contactNumber";
+            param.DbType = global::System.Data.DbType.AnsiStringFixedLength;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@Original_password";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
             param.IsNullable = true;
             param.SourceColumn = "password";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -2928,13 +3036,13 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Developer.*\r\nFROM     Developer";
+            this._commandCollection[0].CommandText = "SELECT devID, name, surname, email, dateOfBirth, contactNumber, password\r\nFROM   " +
+                "  Developer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [Developer] ([name], [surname], [email], [password]) VALUES (@name, @" +
-                "surname, @email, @password);\r\nSELECT devID, name, surname, email, password FROM " +
-                "Developer WHERE (devID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandText = @"INSERT INTO [Developer] ([name], [surname], [email], [dateOfBirth], [contactNumber], [password]) VALUES (@name, @surname, @email, @dateOfBirth, @contactNumber, @password);
+SELECT devID, name, surname, email, dateOfBirth, contactNumber, password FROM Developer WHERE (devID = SCOPE_IDENTITY())";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@name";
@@ -2961,16 +3069,32 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             param.SourceColumn = "email";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@password";
+            param.ParameterName = "@dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@contactNumber";
             param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
-            param.Size = 50;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@password";
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
+            param.Size = 255;
             param.IsNullable = true;
             param.SourceColumn = "password";
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Developer.*\r\nFROM     Developer \r\nWHERE email=@email";
+            this._commandCollection[2].CommandText = "SELECT contactNumber, dateOfBirth, devID, email, name, password, surname FROM Dev" +
+                "eloper WHERE (email = @email)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@email";
@@ -3075,7 +3199,7 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_devID, string Original_name, string Original_surname, string Original_email, string Original_password) {
+        public virtual int Delete(int Original_devID, string Original_name, string Original_surname, string Original_email, System.DateTime Original_dateOfBirth, string Original_contactNumber, string Original_password) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_devID));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
@@ -3095,11 +3219,18 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_email));
             }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_dateOfBirth));
+            if ((Original_contactNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_contactNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_contactNumber));
+            }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_password));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_password));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3121,7 +3252,7 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, string surname, string email, string password) {
+        public virtual int Insert(string name, string surname, string email, System.DateTime dateOfBirth, string contactNumber, string password) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -3140,11 +3271,18 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(email));
             }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dateOfBirth));
+            if ((contactNumber == null)) {
+                throw new global::System.ArgumentNullException("contactNumber");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(contactNumber));
+            }
             if ((password == null)) {
                 throw new global::System.ArgumentNullException("password");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(password));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(password));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3166,7 +3304,7 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string surname, string email, string password, int Original_devID, string Original_name, string Original_surname, string Original_email, string Original_password, int devID) {
+        public virtual int Update(string name, string surname, string email, System.DateTime dateOfBirth, string contactNumber, string password, int Original_devID, string Original_name, string Original_surname, string Original_email, System.DateTime Original_dateOfBirth, string Original_contactNumber, string Original_password, int devID) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -3185,38 +3323,52 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(email));
             }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dateOfBirth));
+            if ((contactNumber == null)) {
+                throw new global::System.ArgumentNullException("contactNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(contactNumber));
+            }
             if ((password == null)) {
                 throw new global::System.ArgumentNullException("password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(password));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(password));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_devID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_devID));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_name));
             }
             if ((Original_surname == null)) {
                 throw new global::System.ArgumentNullException("Original_surname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_surname));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_surname));
             }
             if ((Original_email == null)) {
                 throw new global::System.ArgumentNullException("Original_email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_email));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_dateOfBirth));
+            if ((Original_contactNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_contactNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_contactNumber));
             }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_password));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(devID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(devID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3237,15 +3389,15 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string surname, string email, string password, int Original_devID, string Original_name, string Original_surname, string Original_email, string Original_password) {
-            return this.Update(name, surname, email, password, Original_devID, Original_name, Original_surname, Original_email, Original_password, Original_devID);
+        public virtual int Update(string name, string surname, string email, System.DateTime dateOfBirth, string contactNumber, string password, int Original_devID, string Original_name, string Original_surname, string Original_email, System.DateTime Original_dateOfBirth, string Original_contactNumber, string Original_password) {
+            return this.Update(name, surname, email, dateOfBirth, contactNumber, password, Original_devID, Original_name, Original_surname, Original_email, Original_dateOfBirth, Original_contactNumber, Original_password, Original_devID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string name, string surname, string email, string password) {
+        public virtual int InsertQuery(string name, string surname, string email, System.DateTime dateOfBirth, string contactNumber, string password) {
             global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -3265,11 +3417,18 @@ SELECT devID, name, surname, email, password FROM Developer WHERE (devID = @devI
             else {
                 command.Parameters[2].Value = ((string)(email));
             }
+            command.Parameters[3].Value = ((System.DateTime)(dateOfBirth));
+            if ((contactNumber == null)) {
+                throw new global::System.ArgumentNullException("contactNumber");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(contactNumber));
+            }
             if ((password == null)) {
                 throw new global::System.ArgumentNullException("password");
             }
             else {
-                command.Parameters[3].Value = ((string)(password));
+                command.Parameters[5].Value = ((string)(password));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3728,11 +3887,23 @@ SELECT projID, devID, title, description, stage, support, startDate, estimatedEn
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Project.*\r\nFROM     Project";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Project.*\r\nFROM     Project\r\nWHERE devID =@ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "devID";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3754,6 +3925,32 @@ SELECT projID, devID, title, description, stage, support, startDate, estimatedEn
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DevApp.ProjectDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DevApp.ProjectDataTable dataTable = new DevApp.ProjectDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDevID(DevApp.ProjectDataTable dataTable, int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DevApp.ProjectDataTable GetDataBy(int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             DevApp.ProjectDataTable dataTable = new DevApp.ProjectDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4283,11 +4480,32 @@ SELECT collabID, projID, devID, status FROM Collaboration WHERE (collabID = @col
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT collabID, projID, devID, status\r\nFROM     Collaboration";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT collabID, projID, devID, status\r\nFROM     Collaboration\r\nWHERE projID=@pro" +
+                "j AND devID=@dev";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@proj";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "projID";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dev";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "devID";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4309,6 +4527,34 @@ SELECT collabID, projID, devID, status FROM Collaboration WHERE (collabID = @col
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DevApp.CollaborationDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DevApp.CollaborationDataTable dataTable = new DevApp.CollaborationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjDevID(DevApp.CollaborationDataTable dataTable, int proj, int dev) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(proj));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(dev));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DevApp.CollaborationDataTable GetDataBy(int proj, int dev) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(proj));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(dev));
             DevApp.CollaborationDataTable dataTable = new DevApp.CollaborationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4734,11 +4980,35 @@ SELECT commentID, devID, projID, description, dateCreated FROM Comment WHERE (co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Comment.*\r\nFROM     Comment";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Comment.*\r\nFROM     Comment\r\nWHERE devID=@dev";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dev";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "devID";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Comment.*\r\nFROM     Comment\r\nWHERE projID=@projID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@projID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "projID";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4760,6 +5030,58 @@ SELECT commentID, devID, projID, description, dateCreated FROM Comment WHERE (co
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DevApp.CommentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DevApp.CommentDataTable dataTable = new DevApp.CommentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDevID(DevApp.CommentDataTable dataTable, int dev) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(dev));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DevApp.CommentDataTable GetDataBy1(int dev) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(dev));
+            DevApp.CommentDataTable dataTable = new DevApp.CommentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjID(DevApp.CommentDataTable dataTable, int projID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(projID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DevApp.CommentDataTable GetDataBy(int projID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(projID));
             DevApp.CommentDataTable dataTable = new DevApp.CommentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5162,11 +5484,53 @@ SELECT milestoneID, projID, title, dateAchieved FROM Milestone WHERE (milestoneI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Milestone.*\r\nFROM     Milestone";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Milestone.*\r\nFROM     Milestone\r\nWHERE projID=@proj";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@proj";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "projID";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [Milestone] ([projID], [title], [dateAchieved]) VALUES (@projID, @tit" +
+                "le, @dateAchieved);\r\nSELECT milestoneID, projID, title, dateAchieved FROM Milest" +
+                "one WHERE (milestoneID = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@projID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "projID";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@title";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "title";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dateAchieved";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "dateAchieved";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5188,6 +5552,32 @@ SELECT milestoneID, projID, title, dateAchieved FROM Milestone WHERE (milestoneI
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DevApp.MilestoneDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DevApp.MilestoneDataTable dataTable = new DevApp.MilestoneDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjID(DevApp.MilestoneDataTable dataTable, int proj) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(proj));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DevApp.MilestoneDataTable GetDataBy1(int proj) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(proj));
             DevApp.MilestoneDataTable dataTable = new DevApp.MilestoneDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5326,6 +5716,37 @@ SELECT milestoneID, projID, title, dateAchieved FROM Milestone WHERE (milestoneI
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int projID, string title, System.DateTime dateAchieved, int Original_milestoneID, int Original_projID, string Original_title, System.DateTime Original_dateAchieved) {
             return this.Update(projID, title, dateAchieved, Original_milestoneID, Original_projID, Original_title, Original_dateAchieved, Original_milestoneID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(int projID, string title, System.DateTime dateAchieved) {
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(projID));
+            if ((title == null)) {
+                throw new global::System.ArgumentNullException("title");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(title));
+            }
+            command.Parameters[2].Value = ((System.DateTime)(dateAchieved));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

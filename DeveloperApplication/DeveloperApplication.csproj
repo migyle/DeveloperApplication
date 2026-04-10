@@ -240,6 +240,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\MyProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\MyProjects.Designer.cs">
+      <DependentUpon>MyProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OtherProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\OtherProjects.Designer.cs">
+      <DependentUpon>OtherProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Business\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +265,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DevApp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\Login.cs">
       <SubType>Form</SubType>
@@ -269,8 +287,17 @@
     <Compile Include="Interface\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Business\MyProjects.resx">
+      <DependentUpon>MyProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OtherProjects.resx">
+      <DependentUpon>OtherProjects.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Business\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

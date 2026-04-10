@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeveloperApplication.Business;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DeveloperApplication.Interface.Validation;
-using Microsoft.AspNetCore.Identity;
 
 
 namespace DeveloperApplication.Interface
@@ -37,9 +38,10 @@ namespace DeveloperApplication.Interface
                 string errorMessage = "";
                 
                 if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtSurname.Text) ||
-                    string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+                    string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtContact.Text) ||
+                    string.IsNullOrWhiteSpace(txtPassword.Text) || dtpDOB.Value == null)
                 {
-                    error += "Please fill in all fields.\n";
+                    error += "Please fill in/ select all fields.\n";
                     er = true;
                  
                 }
@@ -61,6 +63,19 @@ namespace DeveloperApplication.Interface
                     error += "Email Error: " + errorMessage + "\n";
                 }
 
+                // Contact Number validation
+                if (!UserValidation.ValidateContactNumber(txtContact.Text, out errorMessage))
+                {
+                    error += "Contact Number Error: " + errorMessage + "\n";
+                }
+
+                // Date of Birth validation
+                if (!UserValidation.ValidateDOB(dtpDOB.Value, out errorMessage))
+                {
+                    error += "Date of Birth Error: " + errorMessage + "\n";
+                }
+
+
                 // Password validation
                 if (!UserValidation.ValidatePassword(txtPassword.Text, out errorMessage))
                 {
@@ -76,12 +91,13 @@ namespace DeveloperApplication.Interface
                     // Hashes Password entered to save it securely in the database
                     string hash = hasher.HashPassword(null, txtPassword.Text);
 
-                    developerTableAdapter1.Insert(txtName.Text, txtSurname.Text, txtEmail.Text, hash);
+                    developerTableAdapter1.InsertQuery(txtName.Text, txtSurname.Text, txtEmail.Text, dtpDOB.Value, txtContact.Text, hash);
                     MessageBox.Show("Developer Account Created Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Hide();
+              
                     frmLogin frmLogin = new frmLogin();
+                    frmLogin.MdiParent = this.MdiParent;
                     frmLogin.Show();
+
                 }
                 else
                 {
