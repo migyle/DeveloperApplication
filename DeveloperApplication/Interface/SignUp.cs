@@ -50,29 +50,34 @@ namespace DeveloperApplication.Interface
                 if (!UserValidation.ValidateName(txtName.Text, out errorMessage))
                 {
                     error += "First Name Error: " + errorMessage + "\n";
+                    er = true;
                 }
                 // Surname validation
                 if (!UserValidation.ValidateName(txtSurname.Text, out errorMessage))
                 {
                     error += "Surname Error: " + errorMessage + "\n";
+                    er = true;
                 }
 
                 // Email validation
                 if (!UserValidation.ValidateEmail(txtEmail.Text, out errorMessage))
                 {
                     error += "Email Error: " + errorMessage + "\n";
+                    er = true;
                 }
 
                 // Contact Number validation
                 if (!UserValidation.ValidateContactNumber(txtContact.Text, out errorMessage))
                 {
                     error += "Contact Number Error: " + errorMessage + "\n";
+                    er = true;
                 }
 
                 // Date of Birth validation
                 if (!UserValidation.ValidateDOB(dtpDOB.Value, out errorMessage))
                 {
                     error += "Date of Birth Error: " + errorMessage + "\n";
+                    er = true;
                 }
 
 
@@ -80,8 +85,8 @@ namespace DeveloperApplication.Interface
                 if (!UserValidation.ValidatePassword(txtPassword.Text, out errorMessage))
                 {
                     error += "Email Error: " + errorMessage + "\n";
+                    er = true;
                 }
-
 
             
                 if (er == false)

@@ -49,15 +49,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dgvComments = new System.Windows.Forms.DataGridView();
             this.gbCollaborators = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSearchDev2 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnMCollabRequest = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbRequests = new System.Windows.Forms.RadioButton();
             this.rbAll = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnArchive = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.gbMCompleted = new System.Windows.Forms.GroupBox();
             this.chkMNo = new System.Windows.Forms.CheckBox();
@@ -88,9 +89,26 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dgvMilestones = new System.Windows.Forms.DataGridView();
+            this.milestoneIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAchievedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.milestoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devApp1 = new DeveloperApplication.DevApp();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectTableAdapter = new DeveloperApplication.DevAppTableAdapters.ProjectTableAdapter();
+            this.commentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.developerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,49 +118,31 @@
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estimatedEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isCompletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectTableAdapter = new DeveloperApplication.DevAppTableAdapters.ProjectTableAdapter();
             this.commentTableAdapter = new DeveloperApplication.DevAppTableAdapters.CommentTableAdapter();
             this.collaborationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.collaborationTableAdapter = new DeveloperApplication.DevAppTableAdapters.CollaborationTableAdapter();
-            this.milestoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.milestoneTableAdapter = new DeveloperApplication.DevAppTableAdapters.MilestoneTableAdapter();
-            this.milestoneIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateAchievedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.devIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.developerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.developerTableAdapter = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.devIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.gbMyProjDet.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
             this.gbCollaborators.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbMCompleted.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyProjects)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMilestones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.collaborationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.milestoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.developerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collaborationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -176,9 +176,9 @@
             // 
             this.gbMyProjDet.Controls.Add(this.groupBox2);
             this.gbMyProjDet.Controls.Add(this.gbCollaborators);
-            this.gbMyProjDet.Controls.Add(this.button3);
-            this.gbMyProjDet.Controls.Add(this.button2);
-            this.gbMyProjDet.Controls.Add(this.button1);
+            this.gbMyProjDet.Controls.Add(this.btnInsert);
+            this.gbMyProjDet.Controls.Add(this.btnArchive);
+            this.gbMyProjDet.Controls.Add(this.btnUpdate);
             this.gbMyProjDet.Controls.Add(this.btnClear);
             this.gbMyProjDet.Controls.Add(this.gbMCompleted);
             this.gbMyProjDet.Controls.Add(this.label11);
@@ -367,6 +367,26 @@
             this.gbCollaborators.TabStop = false;
             this.gbCollaborators.Text = "COLLABORATORS         ";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.devIDDataGridViewTextBoxColumn2,
+            this.nameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.dateOfBirthDataGridViewTextBoxColumn,
+            this.contactNumberDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.developerBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(649, 120);
+            this.dataGridView1.TabIndex = 27;
+            // 
             // txtSearchDev2
             // 
             this.txtSearchDev2.Location = new System.Drawing.Point(167, 14);
@@ -425,32 +445,34 @@
             this.rbAll.Text = "All Collaborators";
             this.rbAll.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnInsert
             // 
-            this.button3.Location = new System.Drawing.Point(554, 136);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 33);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Insert";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnInsert.Location = new System.Drawing.Point(554, 136);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(106, 33);
+            this.btnInsert.TabIndex = 20;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnArchive
             // 
-            this.button2.Location = new System.Drawing.Point(778, 136);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 33);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Archive";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnArchive.Location = new System.Drawing.Point(778, 136);
+            this.btnArchive.Name = "btnArchive";
+            this.btnArchive.Size = new System.Drawing.Size(106, 33);
+            this.btnArchive.TabIndex = 19;
+            this.btnArchive.Text = "Archive";
+            this.btnArchive.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(666, 136);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 33);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(666, 136);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(106, 33);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClear
             // 
@@ -621,6 +643,7 @@
             this.dgvMyProjects.RowTemplate.Height = 24;
             this.dgvMyProjects.Size = new System.Drawing.Size(1346, 193);
             this.dgvMyProjects.TabIndex = 0;
+            this.dgvMyProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyProjects_CellContentClick);
             // 
             // panel2
             // 
@@ -757,19 +780,168 @@
             this.dgvMilestones.Size = new System.Drawing.Size(695, 147);
             this.dgvMilestones.TabIndex = 0;
             // 
+            // milestoneIDDataGridViewTextBoxColumn
+            // 
+            this.milestoneIDDataGridViewTextBoxColumn.DataPropertyName = "milestoneID";
+            this.milestoneIDDataGridViewTextBoxColumn.HeaderText = "milestoneID";
+            this.milestoneIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.milestoneIDDataGridViewTextBoxColumn.Name = "milestoneIDDataGridViewTextBoxColumn";
+            this.milestoneIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.milestoneIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // projIDDataGridViewTextBoxColumn3
+            // 
+            this.projIDDataGridViewTextBoxColumn3.DataPropertyName = "projID";
+            this.projIDDataGridViewTextBoxColumn3.HeaderText = "projID";
+            this.projIDDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.projIDDataGridViewTextBoxColumn3.Name = "projIDDataGridViewTextBoxColumn3";
+            this.projIDDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.projIDDataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // titleDataGridViewTextBoxColumn1
+            // 
+            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn1.HeaderText = "title";
+            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
+            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.titleDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dateAchievedDataGridViewTextBoxColumn
+            // 
+            this.dateAchievedDataGridViewTextBoxColumn.DataPropertyName = "dateAchieved";
+            this.dateAchievedDataGridViewTextBoxColumn.HeaderText = "dateAchieved";
+            this.dateAchievedDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateAchievedDataGridViewTextBoxColumn.Name = "dateAchievedDataGridViewTextBoxColumn";
+            this.dateAchievedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateAchievedDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // milestoneBindingSource
+            // 
+            this.milestoneBindingSource.DataMember = "Milestone";
+            this.milestoneBindingSource.DataSource = this.devApp1;
+            // 
             // devApp1
             // 
             this.devApp1.DataSetName = "DevApp";
             this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // projectBindingSource
+            // commentIDDataGridViewTextBoxColumn
             // 
-            this.projectBindingSource.DataMember = "Project";
-            this.projectBindingSource.DataSource = this.devApp1;
+            this.commentIDDataGridViewTextBoxColumn.DataPropertyName = "commentID";
+            this.commentIDDataGridViewTextBoxColumn.HeaderText = "commentID";
+            this.commentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.commentIDDataGridViewTextBoxColumn.Name = "commentIDDataGridViewTextBoxColumn";
+            this.commentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.commentIDDataGridViewTextBoxColumn.Visible = false;
+            this.commentIDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // projectTableAdapter
+            // devIDDataGridViewTextBoxColumn1
             // 
-            this.projectTableAdapter.ClearBeforeFill = true;
+            this.devIDDataGridViewTextBoxColumn1.DataPropertyName = "devID";
+            this.devIDDataGridViewTextBoxColumn1.HeaderText = "devID";
+            this.devIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.devIDDataGridViewTextBoxColumn1.Name = "devIDDataGridViewTextBoxColumn1";
+            this.devIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.devIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // projIDDataGridViewTextBoxColumn1
+            // 
+            this.projIDDataGridViewTextBoxColumn1.DataPropertyName = "projID";
+            this.projIDDataGridViewTextBoxColumn1.HeaderText = "projID";
+            this.projIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.projIDDataGridViewTextBoxColumn1.Name = "projIDDataGridViewTextBoxColumn1";
+            this.projIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.projIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn1
+            // 
+            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
+            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "dateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "dateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateCreatedDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // commentBindingSource
+            // 
+            this.commentBindingSource.DataMember = "Comment";
+            this.commentBindingSource.DataSource = this.devApp1;
+            // 
+            // devIDDataGridViewTextBoxColumn2
+            // 
+            this.devIDDataGridViewTextBoxColumn2.DataPropertyName = "devID";
+            this.devIDDataGridViewTextBoxColumn2.HeaderText = "devID";
+            this.devIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.devIDDataGridViewTextBoxColumn2.Name = "devIDDataGridViewTextBoxColumn2";
+            this.devIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.devIDDataGridViewTextBoxColumn2.Visible = false;
+            this.devIDDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // surnameDataGridViewTextBoxColumn
+            // 
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
+            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.Visible = false;
+            this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // contactNumberDataGridViewTextBoxColumn
+            // 
+            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "contactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "contactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
+            this.contactNumberDataGridViewTextBoxColumn.Visible = false;
+            this.contactNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // developerBindingSource
+            // 
+            this.developerBindingSource.DataMember = "Developer";
+            this.developerBindingSource.DataSource = this.devApp1;
             // 
             // projIDDataGridViewTextBoxColumn
             // 
@@ -852,10 +1024,14 @@
             this.isCompletedDataGridViewCheckBoxColumn.ReadOnly = true;
             this.isCompletedDataGridViewCheckBoxColumn.Width = 125;
             // 
-            // commentBindingSource
+            // projectBindingSource
             // 
-            this.commentBindingSource.DataMember = "Comment";
-            this.commentBindingSource.DataSource = this.devApp1;
+            this.projectBindingSource.DataMember = "Project";
+            this.projectBindingSource.DataSource = this.devApp1;
+            // 
+            // projectTableAdapter
+            // 
+            this.projectTableAdapter.ClearBeforeFill = true;
             // 
             // commentTableAdapter
             // 
@@ -870,186 +1046,13 @@
             // 
             this.collaborationTableAdapter.ClearBeforeFill = true;
             // 
-            // milestoneBindingSource
-            // 
-            this.milestoneBindingSource.DataMember = "Milestone";
-            this.milestoneBindingSource.DataSource = this.devApp1;
-            // 
             // milestoneTableAdapter
             // 
             this.milestoneTableAdapter.ClearBeforeFill = true;
             // 
-            // milestoneIDDataGridViewTextBoxColumn
-            // 
-            this.milestoneIDDataGridViewTextBoxColumn.DataPropertyName = "milestoneID";
-            this.milestoneIDDataGridViewTextBoxColumn.HeaderText = "milestoneID";
-            this.milestoneIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.milestoneIDDataGridViewTextBoxColumn.Name = "milestoneIDDataGridViewTextBoxColumn";
-            this.milestoneIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.milestoneIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // projIDDataGridViewTextBoxColumn3
-            // 
-            this.projIDDataGridViewTextBoxColumn3.DataPropertyName = "projID";
-            this.projIDDataGridViewTextBoxColumn3.HeaderText = "projID";
-            this.projIDDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.projIDDataGridViewTextBoxColumn3.Name = "projIDDataGridViewTextBoxColumn3";
-            this.projIDDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.projIDDataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "title";
-            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.titleDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dateAchievedDataGridViewTextBoxColumn
-            // 
-            this.dateAchievedDataGridViewTextBoxColumn.DataPropertyName = "dateAchieved";
-            this.dateAchievedDataGridViewTextBoxColumn.HeaderText = "dateAchieved";
-            this.dateAchievedDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateAchievedDataGridViewTextBoxColumn.Name = "dateAchievedDataGridViewTextBoxColumn";
-            this.dateAchievedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateAchievedDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // commentIDDataGridViewTextBoxColumn
-            // 
-            this.commentIDDataGridViewTextBoxColumn.DataPropertyName = "commentID";
-            this.commentIDDataGridViewTextBoxColumn.HeaderText = "commentID";
-            this.commentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.commentIDDataGridViewTextBoxColumn.Name = "commentIDDataGridViewTextBoxColumn";
-            this.commentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.commentIDDataGridViewTextBoxColumn.Visible = false;
-            this.commentIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // devIDDataGridViewTextBoxColumn1
-            // 
-            this.devIDDataGridViewTextBoxColumn1.DataPropertyName = "devID";
-            this.devIDDataGridViewTextBoxColumn1.HeaderText = "devID";
-            this.devIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.devIDDataGridViewTextBoxColumn1.Name = "devIDDataGridViewTextBoxColumn1";
-            this.devIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.devIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // projIDDataGridViewTextBoxColumn1
-            // 
-            this.projIDDataGridViewTextBoxColumn1.DataPropertyName = "projID";
-            this.projIDDataGridViewTextBoxColumn1.HeaderText = "projID";
-            this.projIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.projIDDataGridViewTextBoxColumn1.Name = "projIDDataGridViewTextBoxColumn1";
-            this.projIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.projIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn1
-            // 
-            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
-            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "dateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "dateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateCreatedDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // developerBindingSource
-            // 
-            this.developerBindingSource.DataMember = "Developer";
-            this.developerBindingSource.DataSource = this.devApp1;
-            // 
             // developerTableAdapter
             // 
             this.developerTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.devIDDataGridViewTextBoxColumn2,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.contactNumberDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.developerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 120);
-            this.dataGridView1.TabIndex = 27;
-            // 
-            // devIDDataGridViewTextBoxColumn2
-            // 
-            this.devIDDataGridViewTextBoxColumn2.DataPropertyName = "devID";
-            this.devIDDataGridViewTextBoxColumn2.HeaderText = "devID";
-            this.devIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.devIDDataGridViewTextBoxColumn2.Name = "devIDDataGridViewTextBoxColumn2";
-            this.devIDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.devIDDataGridViewTextBoxColumn2.Visible = false;
-            this.devIDDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
-            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Visible = false;
-            this.passwordDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.Visible = false;
-            this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contactNumberDataGridViewTextBoxColumn
-            // 
-            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "contactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "contactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            this.contactNumberDataGridViewTextBoxColumn.Visible = false;
-            this.contactNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmMyProjects
             // 
@@ -1071,6 +1074,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).EndInit();
             this.gbCollaborators.ResumeLayout(false);
             this.gbCollaborators.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbMCompleted.ResumeLayout(false);
@@ -1080,13 +1084,12 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMilestones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.collaborationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.milestoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.developerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collaborationBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1119,9 +1122,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbRequests;
         private System.Windows.Forms.RadioButton rbAll;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnArchive;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.GroupBox gbMCompleted;
         private System.Windows.Forms.CheckBox chkMNo;

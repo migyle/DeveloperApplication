@@ -23,9 +23,20 @@ namespace DeveloperApplication.Interface
         }
 
 
-        //Validate email address.
-        //formated like so: name@domain.com / name@domain.co.za
-        public static bool ValidateEmail(string email, out string errorMessage)
+        public static bool ValidateString(string name)
+        {
+            int numCount = name.Count(c => "1234567890".Contains(c));
+            if (string.IsNullOrWhiteSpace(name) || numCount > 0)
+            {
+                return false;
+            }
+          
+            return true;
+        }
+
+            //Validate email address.
+            //formated like so: name@domain.com / name@domain.co.za
+            public static bool ValidateEmail(string email, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(email))
             {
