@@ -96,7 +96,7 @@ namespace DeveloperApplication.Interface
                     // Hashes Password entered to save it securely in the database
                     string hash = hasher.HashPassword(null, txtPassword.Text);
 
-                    developerTableAdapter1.InsertQuery(txtName.Text, txtSurname.Text, txtEmail.Text, dtpDOB.Value, txtContact.Text, hash);
+                    developerTableAdapter1.InsertQuery(txtName.Text, txtSurname.Text, txtEmail.Text, dtpDOB.Value, txtContact.Text, hash,"Active");
                     MessageBox.Show("Developer Account Created Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
               
                     frmLogin frmLogin = new frmLogin();

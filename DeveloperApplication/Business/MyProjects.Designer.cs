@@ -33,6 +33,8 @@
             this.txtProjTitleSearch = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.gbMyProjDet = new System.Windows.Forms.GroupBox();
+            this.cmbVisibility = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -44,15 +46,28 @@
             this.txtDevName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.rtbDescrip = new System.Windows.Forms.RichTextBox();
-            this.chkAllComments = new System.Windows.Forms.CheckBox();
-            this.txtSearchDevName = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.dgvComments = new System.Windows.Forms.DataGridView();
+            this.commentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devApp1 = new DeveloperApplication.DevApp();
             this.gbCollaborators = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtSearchDev2 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.btnMCollabRequest = new System.Windows.Forms.Button();
+            this.btnDeny = new System.Windows.Forms.Button();
+            this.dgvDevCollab = new System.Windows.Forms.DataGridView();
+            this.devIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.developerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnApprove = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbRequests = new System.Windows.Forms.RadioButton();
             this.rbAll = new System.Windows.Forms.RadioButton();
@@ -76,39 +91,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvMyProjects = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dgvMilestones = new System.Windows.Forms.DataGridView();
-            this.milestoneIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateAchievedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.milestoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.devApp1 = new DeveloperApplication.DevApp();
-            this.commentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.devIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.devIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.developerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,31 +100,57 @@
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estimatedEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isCompletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.visibilityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnArchiveMilestone = new System.Windows.Forms.Button();
+            this.btnUpdateMilestone = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.dtpDateAchieved = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtMilestoneTitle = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbProjTitle = new System.Windows.Forms.ComboBox();
+            this.dgvMilestones = new System.Windows.Forms.DataGridView();
+            this.milestoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectTableAdapter = new DeveloperApplication.DevAppTableAdapters.ProjectTableAdapter();
             this.commentTableAdapter = new DeveloperApplication.DevAppTableAdapters.CommentTableAdapter();
             this.collaborationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.collaborationTableAdapter = new DeveloperApplication.DevAppTableAdapters.CollaborationTableAdapter();
             this.milestoneTableAdapter = new DeveloperApplication.DevAppTableAdapters.MilestoneTableAdapter();
             this.developerTableAdapter = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
+            this.projectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.commentDetailsTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.CommentDetailsTableAdapter();
+            this.milestoneIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAchievedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.btnInsertMilestone = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gbMyProjDet.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
             this.gbCollaborators.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevCollab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.developerBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbMCompleted.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyProjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMilestones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.milestoneBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.developerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collaborationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,7 +159,7 @@
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.gbMyProjDet);
             this.panel1.Controls.Add(this.dgvMyProjects);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1512, 623);
             this.panel1.TabIndex = 1;
@@ -162,6 +170,7 @@
             this.txtProjTitleSearch.Name = "txtProjTitleSearch";
             this.txtProjTitleSearch.Size = new System.Drawing.Size(367, 22);
             this.txtProjTitleSearch.TabIndex = 7;
+            this.txtProjTitleSearch.TextChanged += new System.EventHandler(this.txtProjTitleSearch_TextChanged);
             // 
             // label21
             // 
@@ -174,6 +183,8 @@
             // 
             // gbMyProjDet
             // 
+            this.gbMyProjDet.Controls.Add(this.cmbVisibility);
+            this.gbMyProjDet.Controls.Add(this.label1);
             this.gbMyProjDet.Controls.Add(this.groupBox2);
             this.gbMyProjDet.Controls.Add(this.gbCollaborators);
             this.gbMyProjDet.Controls.Add(this.btnInsert);
@@ -198,7 +209,27 @@
             this.gbMyProjDet.Size = new System.Drawing.Size(1506, 389);
             this.gbMyProjDet.TabIndex = 1;
             this.gbMyProjDet.TabStop = false;
-            this.gbMyProjDet.Text = "DETAILS:        ";
+            this.gbMyProjDet.Text = "PROJECT DETAILS:        ";
+            // 
+            // cmbVisibility
+            // 
+            this.cmbVisibility.FormattingEnabled = true;
+            this.cmbVisibility.Items.AddRange(new object[] {
+            "Public",
+            "Private"});
+            this.cmbVisibility.Location = new System.Drawing.Point(773, 38);
+            this.cmbVisibility.Name = "cmbVisibility";
+            this.cmbVisibility.Size = new System.Drawing.Size(121, 24);
+            this.cmbVisibility.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(770, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Visibility";
             // 
             // groupBox2
             // 
@@ -212,21 +243,18 @@
             this.groupBox2.Controls.Add(this.txtDevName);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.rtbDescrip);
-            this.groupBox2.Controls.Add(this.chkAllComments);
-            this.groupBox2.Controls.Add(this.txtSearchDevName);
-            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.dgvComments);
             this.groupBox2.Location = new System.Drawing.Point(917, 17);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(583, 360);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "COMMENTS     ";
+            this.groupBox2.Text = "PROJECT COMMENTS     ";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(393, 61);
+            this.label19.Location = new System.Drawing.Point(208, 31);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 16);
             this.label19.TabIndex = 13;
@@ -235,7 +263,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(198, 61);
+            this.label18.Location = new System.Drawing.Point(13, 31);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(66, 16);
             this.label18.TabIndex = 12;
@@ -244,23 +272,25 @@
             // dtpEndDate
             // 
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(457, 57);
+            this.dtpEndDate.Location = new System.Drawing.Point(272, 27);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(121, 22);
             this.dtpEndDate.TabIndex = 11;
+            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(266, 57);
+            this.dtpStartDate.Location = new System.Drawing.Point(81, 27);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(121, 22);
             this.dtpStartDate.TabIndex = 10;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 292);
+            this.label17.Location = new System.Drawing.Point(15, 279);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(78, 16);
             this.label17.TabIndex = 9;
@@ -269,7 +299,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 245);
+            this.label16.Location = new System.Drawing.Point(15, 228);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(111, 16);
             this.label16.TabIndex = 8;
@@ -277,14 +307,14 @@
             // 
             // txtProjTitle
             // 
-            this.txtProjTitle.Location = new System.Drawing.Point(18, 317);
+            this.txtProjTitle.Location = new System.Drawing.Point(26, 302);
             this.txtProjTitle.Name = "txtProjTitle";
-            this.txtProjTitle.Size = new System.Drawing.Size(144, 22);
+            this.txtProjTitle.Size = new System.Drawing.Size(136, 22);
             this.txtProjTitle.TabIndex = 7;
             // 
             // txtDevName
             // 
-            this.txtDevName.Location = new System.Drawing.Point(26, 265);
+            this.txtDevName.Location = new System.Drawing.Point(26, 247);
             this.txtDevName.Name = "txtDevName";
             this.txtDevName.Size = new System.Drawing.Size(136, 22);
             this.txtDevName.TabIndex = 6;
@@ -292,7 +322,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(151, 240);
+            this.label15.Location = new System.Drawing.Point(165, 228);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 16);
             this.label15.TabIndex = 5;
@@ -300,125 +330,252 @@
             // 
             // rtbDescrip
             // 
-            this.rtbDescrip.Location = new System.Drawing.Point(168, 262);
+            this.rtbDescrip.Location = new System.Drawing.Point(168, 247);
             this.rtbDescrip.Name = "rtbDescrip";
             this.rtbDescrip.Size = new System.Drawing.Size(393, 92);
             this.rtbDescrip.TabIndex = 4;
             this.rtbDescrip.Text = "";
-            // 
-            // chkAllComments
-            // 
-            this.chkAllComments.AutoSize = true;
-            this.chkAllComments.Location = new System.Drawing.Point(466, 27);
-            this.chkAllComments.Name = "chkAllComments";
-            this.chkAllComments.Size = new System.Drawing.Size(111, 20);
-            this.chkAllComments.TabIndex = 3;
-            this.chkAllComments.Text = "All Comments";
-            this.chkAllComments.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchDevName
-            // 
-            this.txtSearchDevName.Location = new System.Drawing.Point(154, 23);
-            this.txtSearchDevName.Name = "txtSearchDevName";
-            this.txtSearchDevName.Size = new System.Drawing.Size(252, 22);
-            this.txtSearchDevName.TabIndex = 2;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(142, 16);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Search by Dev Name :";
             // 
             // dgvComments
             // 
             this.dgvComments.AllowUserToAddRows = false;
             this.dgvComments.AllowUserToDeleteRows = false;
             this.dgvComments.AutoGenerateColumns = false;
+            this.dgvComments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvComments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.commentIDDataGridViewTextBoxColumn,
             this.devIDDataGridViewTextBoxColumn1,
             this.projIDDataGridViewTextBoxColumn1,
             this.descriptionDataGridViewTextBoxColumn1,
-            this.dateCreatedDataGridViewTextBoxColumn});
+            this.dateCreatedDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn1});
             this.dgvComments.DataSource = this.commentBindingSource;
-            this.dgvComments.Location = new System.Drawing.Point(6, 84);
+            this.dgvComments.Location = new System.Drawing.Point(10, 58);
             this.dgvComments.Name = "dgvComments";
             this.dgvComments.ReadOnly = true;
             this.dgvComments.RowHeadersWidth = 51;
             this.dgvComments.RowTemplate.Height = 24;
-            this.dgvComments.Size = new System.Drawing.Size(571, 144);
+            this.dgvComments.Size = new System.Drawing.Size(572, 156);
             this.dgvComments.TabIndex = 0;
+            this.dgvComments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComments_CellClick);
+            // 
+            // commentIDDataGridViewTextBoxColumn
+            // 
+            this.commentIDDataGridViewTextBoxColumn.DataPropertyName = "commentID";
+            this.commentIDDataGridViewTextBoxColumn.HeaderText = "commentID";
+            this.commentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.commentIDDataGridViewTextBoxColumn.Name = "commentIDDataGridViewTextBoxColumn";
+            this.commentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.commentIDDataGridViewTextBoxColumn.Visible = false;
+            this.commentIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // devIDDataGridViewTextBoxColumn1
+            // 
+            this.devIDDataGridViewTextBoxColumn1.DataPropertyName = "devID";
+            this.devIDDataGridViewTextBoxColumn1.HeaderText = "devID";
+            this.devIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.devIDDataGridViewTextBoxColumn1.Name = "devIDDataGridViewTextBoxColumn1";
+            this.devIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.devIDDataGridViewTextBoxColumn1.Visible = false;
+            this.devIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // projIDDataGridViewTextBoxColumn1
+            // 
+            this.projIDDataGridViewTextBoxColumn1.DataPropertyName = "projID";
+            this.projIDDataGridViewTextBoxColumn1.HeaderText = "projID";
+            this.projIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.projIDDataGridViewTextBoxColumn1.Name = "projIDDataGridViewTextBoxColumn1";
+            this.projIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.projIDDataGridViewTextBoxColumn1.Visible = false;
+            this.projIDDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn1
+            // 
+            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
+            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "dateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "dateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateCreatedDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn1
+            // 
+            this.statusDataGridViewTextBoxColumn1.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn1.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn1.Name = "statusDataGridViewTextBoxColumn1";
+            this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn1.Visible = false;
+            this.statusDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // commentBindingSource
+            // 
+            this.commentBindingSource.DataMember = "Comment";
+            this.commentBindingSource.DataSource = this.devApp1;
+            // 
+            // devApp1
+            // 
+            this.devApp1.DataSetName = "DevApp";
+            this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gbCollaborators
             // 
-            this.gbCollaborators.Controls.Add(this.dataGridView1);
-            this.gbCollaborators.Controls.Add(this.txtSearchDev2);
-            this.gbCollaborators.Controls.Add(this.label20);
-            this.gbCollaborators.Controls.Add(this.btnMCollabRequest);
+            this.gbCollaborators.Controls.Add(this.btnDeny);
+            this.gbCollaborators.Controls.Add(this.dgvDevCollab);
+            this.gbCollaborators.Controls.Add(this.btnApprove);
             this.gbCollaborators.Controls.Add(this.groupBox1);
-            this.gbCollaborators.Location = new System.Drawing.Point(6, 215);
+            this.gbCollaborators.Location = new System.Drawing.Point(6, 210);
             this.gbCollaborators.Name = "gbCollaborators";
-            this.gbCollaborators.Size = new System.Drawing.Size(881, 168);
+            this.gbCollaborators.Size = new System.Drawing.Size(881, 173);
             this.gbCollaborators.TabIndex = 23;
             this.gbCollaborators.TabStop = false;
-            this.gbCollaborators.Text = "COLLABORATORS         ";
+            this.gbCollaborators.Text = "PROJECT COLLABORATORS         ";
             // 
-            // dataGridView1
+            // btnDeny
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnDeny.Location = new System.Drawing.Point(755, 133);
+            this.btnDeny.Name = "btnDeny";
+            this.btnDeny.Size = new System.Drawing.Size(93, 34);
+            this.btnDeny.TabIndex = 28;
+            this.btnDeny.Text = "Deny";
+            this.btnDeny.UseVisualStyleBackColor = true;
+            this.btnDeny.Visible = false;
+            this.btnDeny.Click += new System.EventHandler(this.btnDeny_Click);
+            // 
+            // dgvDevCollab
+            // 
+            this.dgvDevCollab.AllowUserToAddRows = false;
+            this.dgvDevCollab.AllowUserToDeleteRows = false;
+            this.dgvDevCollab.AutoGenerateColumns = false;
+            this.dgvDevCollab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDevCollab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.devIDDataGridViewTextBoxColumn2,
             this.nameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.dateOfBirthDataGridViewTextBoxColumn,
-            this.contactNumberDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.developerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 120);
-            this.dataGridView1.TabIndex = 27;
+            this.contactNumberDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn2});
+            this.dgvDevCollab.DataSource = this.developerBindingSource;
+            this.dgvDevCollab.Location = new System.Drawing.Point(15, 26);
+            this.dgvDevCollab.Name = "dgvDevCollab";
+            this.dgvDevCollab.ReadOnly = true;
+            this.dgvDevCollab.RowHeadersWidth = 51;
+            this.dgvDevCollab.RowTemplate.Height = 24;
+            this.dgvDevCollab.Size = new System.Drawing.Size(614, 141);
+            this.dgvDevCollab.TabIndex = 27;
             // 
-            // txtSearchDev2
+            // devIDDataGridViewTextBoxColumn2
             // 
-            this.txtSearchDev2.Location = new System.Drawing.Point(167, 14);
-            this.txtSearchDev2.Name = "txtSearchDev2";
-            this.txtSearchDev2.Size = new System.Drawing.Size(244, 22);
-            this.txtSearchDev2.TabIndex = 26;
+            this.devIDDataGridViewTextBoxColumn2.DataPropertyName = "devID";
+            this.devIDDataGridViewTextBoxColumn2.HeaderText = "devID";
+            this.devIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.devIDDataGridViewTextBoxColumn2.Name = "devIDDataGridViewTextBoxColumn2";
+            this.devIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.devIDDataGridViewTextBoxColumn2.Visible = false;
+            this.devIDDataGridViewTextBoxColumn2.Width = 125;
             // 
-            // label20
+            // nameDataGridViewTextBoxColumn
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(19, 17);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(142, 16);
-            this.label20.TabIndex = 25;
-            this.label20.Text = "Search by Dev Name :";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // btnMCollabRequest
+            // surnameDataGridViewTextBoxColumn
             // 
-            this.btnMCollabRequest.Location = new System.Drawing.Point(693, 132);
-            this.btnMCollabRequest.Name = "btnMCollabRequest";
-            this.btnMCollabRequest.Size = new System.Drawing.Size(142, 34);
-            this.btnMCollabRequest.TabIndex = 24;
-            this.btnMCollabRequest.Text = "Approve Request";
-            this.btnMCollabRequest.UseVisualStyleBackColor = true;
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
+            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.surnameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateOfBirthDataGridViewTextBoxColumn.Visible = false;
+            this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // contactNumberDataGridViewTextBoxColumn
+            // 
+            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "contactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "contactNumber";
+            this.contactNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
+            this.contactNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contactNumberDataGridViewTextBoxColumn.Visible = false;
+            this.contactNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn2
+            // 
+            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn2.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
+            this.statusDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn2.Visible = false;
+            this.statusDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // developerBindingSource
+            // 
+            this.developerBindingSource.DataMember = "Developer";
+            this.developerBindingSource.DataSource = this.devApp1;
+            // 
+            // btnApprove
+            // 
+            this.btnApprove.Location = new System.Drawing.Point(645, 133);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(93, 34);
+            this.btnApprove.TabIndex = 24;
+            this.btnApprove.Text = "Approve";
+            this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Visible = false;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbRequests);
             this.groupBox1.Controls.Add(this.rbAll);
-            this.groupBox1.Location = new System.Drawing.Point(687, 21);
+            this.groupBox1.Location = new System.Drawing.Point(651, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(169, 110);
+            this.groupBox1.Size = new System.Drawing.Size(197, 110);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FILTERS  ";
@@ -432,6 +589,7 @@
             this.rbRequests.TabIndex = 1;
             this.rbRequests.Text = "Collaborator Requests";
             this.rbRequests.UseVisualStyleBackColor = true;
+            this.rbRequests.CheckedChanged += new System.EventHandler(this.rbRequests_CheckedChanged);
             // 
             // rbAll
             // 
@@ -444,10 +602,11 @@
             this.rbAll.TabStop = true;
             this.rbAll.Text = "All Collaborators";
             this.rbAll.UseVisualStyleBackColor = true;
+            this.rbAll.CheckedChanged += new System.EventHandler(this.rbAll_CheckedChanged);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(554, 136);
+            this.btnInsert.Location = new System.Drawing.Point(338, 152);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(106, 33);
             this.btnInsert.TabIndex = 20;
@@ -457,16 +616,17 @@
             // 
             // btnArchive
             // 
-            this.btnArchive.Location = new System.Drawing.Point(778, 136);
+            this.btnArchive.Location = new System.Drawing.Point(628, 152);
             this.btnArchive.Name = "btnArchive";
             this.btnArchive.Size = new System.Drawing.Size(106, 33);
             this.btnArchive.TabIndex = 19;
             this.btnArchive.Text = "Archive";
             this.btnArchive.UseVisualStyleBackColor = true;
+            this.btnArchive.Click += new System.EventHandler(this.btnArchive_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(666, 136);
+            this.btnUpdate.Location = new System.Drawing.Point(490, 152);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 33);
             this.btnUpdate.TabIndex = 18;
@@ -476,20 +636,21 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(560, 175);
+            this.btnClear.Location = new System.Drawing.Point(778, 152);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(324, 29);
+            this.btnClear.Size = new System.Drawing.Size(105, 40);
             this.btnClear.TabIndex = 17;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // gbMCompleted
             // 
             this.gbMCompleted.Controls.Add(this.chkMNo);
             this.gbMCompleted.Controls.Add(this.chkMYes);
-            this.gbMCompleted.Location = new System.Drawing.Point(338, 136);
+            this.gbMCompleted.Location = new System.Drawing.Point(773, 75);
             this.gbMCompleted.Name = "gbMCompleted";
-            this.gbMCompleted.Size = new System.Drawing.Size(150, 61);
+            this.gbMCompleted.Size = new System.Drawing.Size(133, 61);
             this.gbMCompleted.TabIndex = 16;
             this.gbMCompleted.TabStop = false;
             this.gbMCompleted.Text = "is Completed?    ";
@@ -497,12 +658,13 @@
             // chkMNo
             // 
             this.chkMNo.AutoSize = true;
-            this.chkMNo.Location = new System.Drawing.Point(97, 27);
+            this.chkMNo.Location = new System.Drawing.Point(76, 27);
             this.chkMNo.Name = "chkMNo";
             this.chkMNo.Size = new System.Drawing.Size(47, 20);
             this.chkMNo.TabIndex = 1;
             this.chkMNo.Text = "No";
             this.chkMNo.UseVisualStyleBackColor = true;
+            this.chkMNo.CheckedChanged += new System.EventHandler(this.chkMNo_CheckedChanged);
             // 
             // chkMYes
             // 
@@ -513,11 +675,12 @@
             this.chkMYes.TabIndex = 0;
             this.chkMYes.Text = "Yes";
             this.chkMYes.UseVisualStyleBackColor = true;
+            this.chkMYes.CheckedChanged += new System.EventHandler(this.chkMYes_CheckedChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(647, 82);
+            this.label11.Location = new System.Drawing.Point(600, 82);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 16);
             this.label11.TabIndex = 15;
@@ -525,15 +688,16 @@
             // 
             // dtpMEndDate
             // 
-            this.dtpMEndDate.Location = new System.Drawing.Point(660, 105);
+            this.dtpMEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMEndDate.Location = new System.Drawing.Point(613, 105);
             this.dtpMEndDate.Name = "dtpMEndDate";
-            this.dtpMEndDate.Size = new System.Drawing.Size(224, 22);
+            this.dtpMEndDate.Size = new System.Drawing.Size(128, 22);
             this.dtpMEndDate.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(647, 18);
+            this.label9.Location = new System.Drawing.Point(600, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 16);
             this.label9.TabIndex = 12;
@@ -541,16 +705,17 @@
             // 
             // dtpMStartDate
             // 
-            this.dtpMStartDate.Location = new System.Drawing.Point(660, 40);
+            this.dtpMStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMStartDate.Location = new System.Drawing.Point(613, 40);
             this.dtpMStartDate.Name = "dtpMStartDate";
-            this.dtpMStartDate.Size = new System.Drawing.Size(224, 22);
+            this.dtpMStartDate.Size = new System.Drawing.Size(128, 22);
             this.dtpMStartDate.TabIndex = 11;
             // 
             // txtMSupport
             // 
             this.txtMSupport.Location = new System.Drawing.Point(338, 105);
             this.txtMSupport.Name = "txtMSupport";
-            this.txtMSupport.Size = new System.Drawing.Size(262, 22);
+            this.txtMSupport.Size = new System.Drawing.Size(240, 22);
             this.txtMSupport.TabIndex = 10;
             // 
             // label8
@@ -583,7 +748,7 @@
             "Maintenance"});
             this.cmbMStage.Location = new System.Drawing.Point(338, 38);
             this.cmbMStage.Name = "cmbMStage";
-            this.cmbMStage.Size = new System.Drawing.Size(262, 24);
+            this.cmbMStage.Size = new System.Drawing.Size(240, 24);
             this.cmbMStage.TabIndex = 7;
             // 
             // txtMDescrip
@@ -634,7 +799,9 @@
             this.supportDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
             this.estimatedEndDateDataGridViewTextBoxColumn,
-            this.isCompletedDataGridViewCheckBoxColumn});
+            this.isCompletedDataGridViewCheckBoxColumn,
+            this.visibilityDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
             this.dgvMyProjects.DataSource = this.projectBindingSource;
             this.dgvMyProjects.Location = new System.Drawing.Point(163, 35);
             this.dgvMyProjects.Name = "dgvMyProjects";
@@ -643,305 +810,8 @@
             this.dgvMyProjects.RowTemplate.Height = 24;
             this.dgvMyProjects.Size = new System.Drawing.Size(1346, 193);
             this.dgvMyProjects.TabIndex = 0;
+            this.dgvMyProjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyProjects_CellClick);
             this.dgvMyProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyProjects_CellContentClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.groupBox6);
-            this.panel2.Controls.Add(this.dgvMilestones);
-            this.panel2.Location = new System.Drawing.Point(276, 648);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1248, 182);
-            this.panel2.TabIndex = 2;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.button5);
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.button7);
-            this.groupBox6.Controls.Add(this.button8);
-            this.groupBox6.Controls.Add(this.dateTimePicker1);
-            this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.textBox1);
-            this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.label10);
-            this.groupBox6.Controls.Add(this.comboBox1);
-            this.groupBox6.Location = new System.Drawing.Point(737, 7);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(501, 166);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "MILESTONE DETAILS";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(6, 127);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 33);
-            this.button5.TabIndex = 34;
-            this.button5.Text = "Insert";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(283, 127);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 33);
-            this.button6.TabIndex = 33;
-            this.button6.Text = "Archive";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(148, 127);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(129, 33);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "Update";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(430, 112);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(65, 48);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "Clear";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(283, 37);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 30;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(272, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 16);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Date Achieved";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(121, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 22);
-            this.textBox1.TabIndex = 28;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(198, 66);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 16);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Milestone Title";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 16);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Project Title";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "title";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(37, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 24);
-            this.comboBox1.TabIndex = 25;
-            this.comboBox1.ValueMember = "projID";
-            // 
-            // dgvMilestones
-            // 
-            this.dgvMilestones.AllowUserToAddRows = false;
-            this.dgvMilestones.AllowUserToDeleteRows = false;
-            this.dgvMilestones.AutoGenerateColumns = false;
-            this.dgvMilestones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMilestones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.milestoneIDDataGridViewTextBoxColumn,
-            this.projIDDataGridViewTextBoxColumn3,
-            this.titleDataGridViewTextBoxColumn1,
-            this.dateAchievedDataGridViewTextBoxColumn});
-            this.dgvMilestones.DataSource = this.milestoneBindingSource;
-            this.dgvMilestones.Location = new System.Drawing.Point(36, 20);
-            this.dgvMilestones.Name = "dgvMilestones";
-            this.dgvMilestones.ReadOnly = true;
-            this.dgvMilestones.RowHeadersWidth = 51;
-            this.dgvMilestones.RowTemplate.Height = 24;
-            this.dgvMilestones.Size = new System.Drawing.Size(695, 147);
-            this.dgvMilestones.TabIndex = 0;
-            // 
-            // milestoneIDDataGridViewTextBoxColumn
-            // 
-            this.milestoneIDDataGridViewTextBoxColumn.DataPropertyName = "milestoneID";
-            this.milestoneIDDataGridViewTextBoxColumn.HeaderText = "milestoneID";
-            this.milestoneIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.milestoneIDDataGridViewTextBoxColumn.Name = "milestoneIDDataGridViewTextBoxColumn";
-            this.milestoneIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.milestoneIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // projIDDataGridViewTextBoxColumn3
-            // 
-            this.projIDDataGridViewTextBoxColumn3.DataPropertyName = "projID";
-            this.projIDDataGridViewTextBoxColumn3.HeaderText = "projID";
-            this.projIDDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.projIDDataGridViewTextBoxColumn3.Name = "projIDDataGridViewTextBoxColumn3";
-            this.projIDDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.projIDDataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "title";
-            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.titleDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dateAchievedDataGridViewTextBoxColumn
-            // 
-            this.dateAchievedDataGridViewTextBoxColumn.DataPropertyName = "dateAchieved";
-            this.dateAchievedDataGridViewTextBoxColumn.HeaderText = "dateAchieved";
-            this.dateAchievedDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateAchievedDataGridViewTextBoxColumn.Name = "dateAchievedDataGridViewTextBoxColumn";
-            this.dateAchievedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateAchievedDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // milestoneBindingSource
-            // 
-            this.milestoneBindingSource.DataMember = "Milestone";
-            this.milestoneBindingSource.DataSource = this.devApp1;
-            // 
-            // devApp1
-            // 
-            this.devApp1.DataSetName = "DevApp";
-            this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // commentIDDataGridViewTextBoxColumn
-            // 
-            this.commentIDDataGridViewTextBoxColumn.DataPropertyName = "commentID";
-            this.commentIDDataGridViewTextBoxColumn.HeaderText = "commentID";
-            this.commentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.commentIDDataGridViewTextBoxColumn.Name = "commentIDDataGridViewTextBoxColumn";
-            this.commentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.commentIDDataGridViewTextBoxColumn.Visible = false;
-            this.commentIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // devIDDataGridViewTextBoxColumn1
-            // 
-            this.devIDDataGridViewTextBoxColumn1.DataPropertyName = "devID";
-            this.devIDDataGridViewTextBoxColumn1.HeaderText = "devID";
-            this.devIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.devIDDataGridViewTextBoxColumn1.Name = "devIDDataGridViewTextBoxColumn1";
-            this.devIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.devIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // projIDDataGridViewTextBoxColumn1
-            // 
-            this.projIDDataGridViewTextBoxColumn1.DataPropertyName = "projID";
-            this.projIDDataGridViewTextBoxColumn1.HeaderText = "projID";
-            this.projIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.projIDDataGridViewTextBoxColumn1.Name = "projIDDataGridViewTextBoxColumn1";
-            this.projIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.projIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn1
-            // 
-            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
-            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "dateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "dateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateCreatedDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // commentBindingSource
-            // 
-            this.commentBindingSource.DataMember = "Comment";
-            this.commentBindingSource.DataSource = this.devApp1;
-            // 
-            // devIDDataGridViewTextBoxColumn2
-            // 
-            this.devIDDataGridViewTextBoxColumn2.DataPropertyName = "devID";
-            this.devIDDataGridViewTextBoxColumn2.HeaderText = "devID";
-            this.devIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.devIDDataGridViewTextBoxColumn2.Name = "devIDDataGridViewTextBoxColumn2";
-            this.devIDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.devIDDataGridViewTextBoxColumn2.Visible = false;
-            this.devIDDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
-            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Visible = false;
-            this.passwordDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.Visible = false;
-            this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contactNumberDataGridViewTextBoxColumn
-            // 
-            this.contactNumberDataGridViewTextBoxColumn.DataPropertyName = "contactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.HeaderText = "contactNumber";
-            this.contactNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            this.contactNumberDataGridViewTextBoxColumn.Visible = false;
-            this.contactNumberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // developerBindingSource
-            // 
-            this.developerBindingSource.DataMember = "Developer";
-            this.developerBindingSource.DataSource = this.devApp1;
             // 
             // projIDDataGridViewTextBoxColumn
             // 
@@ -1024,10 +894,167 @@
             this.isCompletedDataGridViewCheckBoxColumn.ReadOnly = true;
             this.isCompletedDataGridViewCheckBoxColumn.Width = 125;
             // 
+            // visibilityDataGridViewTextBoxColumn
+            // 
+            this.visibilityDataGridViewTextBoxColumn.DataPropertyName = "visibility";
+            this.visibilityDataGridViewTextBoxColumn.HeaderText = "visibility";
+            this.visibilityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.visibilityDataGridViewTextBoxColumn.Name = "visibilityDataGridViewTextBoxColumn";
+            this.visibilityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.visibilityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Visible = false;
+            this.statusDataGridViewTextBoxColumn.Width = 125;
+            // 
             // projectBindingSource
             // 
             this.projectBindingSource.DataMember = "Project";
             this.projectBindingSource.DataSource = this.devApp1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox6);
+            this.panel2.Controls.Add(this.dgvMilestones);
+            this.panel2.Location = new System.Drawing.Point(12, 634);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1402, 182);
+            this.panel2.TabIndex = 2;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.cmbStatus);
+            this.groupBox6.Controls.Add(this.label2);
+            this.groupBox6.Controls.Add(this.btnInsertMilestone);
+            this.groupBox6.Controls.Add(this.btnArchiveMilestone);
+            this.groupBox6.Controls.Add(this.btnUpdateMilestone);
+            this.groupBox6.Controls.Add(this.button8);
+            this.groupBox6.Controls.Add(this.dtpDateAchieved);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.txtMilestoneTitle);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Controls.Add(this.cmbProjTitle);
+            this.groupBox6.Location = new System.Drawing.Point(708, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(688, 155);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "MILESTONE DETAILS";
+            // 
+            // btnArchiveMilestone
+            // 
+            this.btnArchiveMilestone.Location = new System.Drawing.Point(531, 109);
+            this.btnArchiveMilestone.Name = "btnArchiveMilestone";
+            this.btnArchiveMilestone.Size = new System.Drawing.Size(129, 33);
+            this.btnArchiveMilestone.TabIndex = 33;
+            this.btnArchiveMilestone.Text = "Archive";
+            this.btnArchiveMilestone.UseVisualStyleBackColor = true;
+            this.btnArchiveMilestone.Click += new System.EventHandler(this.btnArchiveMilestone_Click);
+            // 
+            // btnUpdateMilestone
+            // 
+            this.btnUpdateMilestone.Location = new System.Drawing.Point(531, 63);
+            this.btnUpdateMilestone.Name = "btnUpdateMilestone";
+            this.btnUpdateMilestone.Size = new System.Drawing.Size(129, 33);
+            this.btnUpdateMilestone.TabIndex = 32;
+            this.btnUpdateMilestone.Text = "Update";
+            this.btnUpdateMilestone.UseVisualStyleBackColor = true;
+            this.btnUpdateMilestone.Click += new System.EventHandler(this.btnUpdateMilestone_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(6, 117);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(60, 32);
+            this.button8.TabIndex = 31;
+            this.button8.Text = "Clear";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // dtpDateAchieved
+            // 
+            this.dtpDateAchieved.Location = new System.Drawing.Point(283, 37);
+            this.dtpDateAchieved.Name = "dtpDateAchieved";
+            this.dtpDateAchieved.Size = new System.Drawing.Size(200, 22);
+            this.dtpDateAchieved.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(272, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 16);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Date Achieved";
+            // 
+            // txtMilestoneTitle
+            // 
+            this.txtMilestoneTitle.Location = new System.Drawing.Point(37, 88);
+            this.txtMilestoneTitle.Name = "txtMilestoneTitle";
+            this.txtMilestoneTitle.Size = new System.Drawing.Size(196, 22);
+            this.txtMilestoneTitle.TabIndex = 28;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 16);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Milestone Title";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(20, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 16);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Project Title";
+            // 
+            // cmbProjTitle
+            // 
+            this.cmbProjTitle.DataSource = this.projectBindingSource;
+            this.cmbProjTitle.DisplayMember = "title";
+            this.cmbProjTitle.FormattingEnabled = true;
+            this.cmbProjTitle.Location = new System.Drawing.Point(37, 39);
+            this.cmbProjTitle.Name = "cmbProjTitle";
+            this.cmbProjTitle.Size = new System.Drawing.Size(196, 24);
+            this.cmbProjTitle.TabIndex = 25;
+            this.cmbProjTitle.ValueMember = "projID";
+            // 
+            // dgvMilestones
+            // 
+            this.dgvMilestones.AllowUserToAddRows = false;
+            this.dgvMilestones.AllowUserToDeleteRows = false;
+            this.dgvMilestones.AutoGenerateColumns = false;
+            this.dgvMilestones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMilestones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.milestoneIDDataGridViewTextBoxColumn,
+            this.projIDDataGridViewTextBoxColumn2,
+            this.titleDataGridViewTextBoxColumn1,
+            this.dateAchievedDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn3});
+            this.dgvMilestones.DataSource = this.milestoneBindingSource;
+            this.dgvMilestones.Location = new System.Drawing.Point(7, 7);
+            this.dgvMilestones.Name = "dgvMilestones";
+            this.dgvMilestones.ReadOnly = true;
+            this.dgvMilestones.RowHeadersWidth = 51;
+            this.dgvMilestones.RowTemplate.Height = 24;
+            this.dgvMilestones.Size = new System.Drawing.Size(695, 151);
+            this.dgvMilestones.TabIndex = 0;
+            // 
+            // milestoneBindingSource
+            // 
+            this.milestoneBindingSource.DataMember = "Milestone";
+            this.milestoneBindingSource.DataSource = this.devApp1;
             // 
             // projectTableAdapter
             // 
@@ -1054,6 +1081,97 @@
             // 
             this.developerTableAdapter.ClearBeforeFill = true;
             // 
+            // projectBindingSource1
+            // 
+            this.projectBindingSource1.DataMember = "Project";
+            this.projectBindingSource1.DataSource = this.devApp1;
+            // 
+            // commentDetailsTableAdapter1
+            // 
+            this.commentDetailsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // milestoneIDDataGridViewTextBoxColumn
+            // 
+            this.milestoneIDDataGridViewTextBoxColumn.DataPropertyName = "milestoneID";
+            this.milestoneIDDataGridViewTextBoxColumn.HeaderText = "milestoneID";
+            this.milestoneIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.milestoneIDDataGridViewTextBoxColumn.Name = "milestoneIDDataGridViewTextBoxColumn";
+            this.milestoneIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.milestoneIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // projIDDataGridViewTextBoxColumn2
+            // 
+            this.projIDDataGridViewTextBoxColumn2.DataPropertyName = "projID";
+            this.projIDDataGridViewTextBoxColumn2.HeaderText = "projID";
+            this.projIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.projIDDataGridViewTextBoxColumn2.Name = "projIDDataGridViewTextBoxColumn2";
+            this.projIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.projIDDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // titleDataGridViewTextBoxColumn1
+            // 
+            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn1.HeaderText = "title";
+            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
+            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.titleDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dateAchievedDataGridViewTextBoxColumn
+            // 
+            this.dateAchievedDataGridViewTextBoxColumn.DataPropertyName = "dateAchieved";
+            this.dateAchievedDataGridViewTextBoxColumn.HeaderText = "dateAchieved";
+            this.dateAchievedDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateAchievedDataGridViewTextBoxColumn.Name = "dateAchievedDataGridViewTextBoxColumn";
+            this.dateAchievedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateAchievedDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn3
+            // 
+            this.statusDataGridViewTextBoxColumn3.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn3.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn3.Name = "statusDataGridViewTextBoxColumn3";
+            this.statusDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(272, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Status";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DisplayMember = "title";
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Pending",
+            "",
+            "In Progress",
+            "",
+            "Completed",
+            "",
+            "On Hold"});
+            this.cmbStatus.Location = new System.Drawing.Point(283, 88);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(200, 24);
+            this.cmbStatus.TabIndex = 36;
+            this.cmbStatus.ValueMember = "projID";
+            // 
+            // btnInsertMilestone
+            // 
+            this.btnInsertMilestone.Location = new System.Drawing.Point(531, 18);
+            this.btnInsertMilestone.Name = "btnInsertMilestone";
+            this.btnInsertMilestone.Size = new System.Drawing.Size(129, 33);
+            this.btnInsertMilestone.TabIndex = 34;
+            this.btnInsertMilestone.Text = "Insert";
+            this.btnInsertMilestone.UseVisualStyleBackColor = true;
+            this.btnInsertMilestone.Click += new System.EventHandler(this.button5_Click);
+            // 
             // frmMyProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1072,24 +1190,24 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
             this.gbCollaborators.ResumeLayout(false);
-            this.gbCollaborators.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevCollab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.developerBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbMCompleted.ResumeLayout(false);
             this.gbMCompleted.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyProjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMilestones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.milestoneBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.developerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collaborationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1111,14 +1229,9 @@
         private System.Windows.Forms.TextBox txtDevName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox rtbDescrip;
-        private System.Windows.Forms.CheckBox chkAllComments;
-        private System.Windows.Forms.TextBox txtSearchDevName;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dgvComments;
         private System.Windows.Forms.GroupBox gbCollaborators;
-        private System.Windows.Forms.TextBox txtSearchDev2;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button btnMCollabRequest;
+        private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbRequests;
         private System.Windows.Forms.RadioButton rbAll;
@@ -1144,20 +1257,31 @@
         private System.Windows.Forms.DataGridView dgvMyProjects;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnArchiveMilestone;
+        private System.Windows.Forms.Button btnUpdateMilestone;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDateAchieved;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMilestoneTitle;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbProjTitle;
         private System.Windows.Forms.DataGridView dgvMilestones;
         private DevApp devApp1;
         private System.Windows.Forms.BindingSource projectBindingSource;
         private DevAppTableAdapters.ProjectTableAdapter projectTableAdapter;
+        private System.Windows.Forms.BindingSource commentBindingSource;
+        private DevAppTableAdapters.CommentTableAdapter commentTableAdapter;
+        private System.Windows.Forms.BindingSource collaborationBindingSource;
+        private DevAppTableAdapters.CollaborationTableAdapter collaborationTableAdapter;
+        private System.Windows.Forms.BindingSource milestoneBindingSource;
+        private DevAppTableAdapters.MilestoneTableAdapter milestoneTableAdapter;
+        private System.Windows.Forms.BindingSource developerBindingSource;
+        private DevAppTableAdapters.DeveloperTableAdapter developerTableAdapter;
+        private System.Windows.Forms.DataGridView dgvDevCollab;
+        private System.Windows.Forms.BindingSource projectBindingSource1;
+        private System.Windows.Forms.ComboBox cmbVisibility;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn projIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn devIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
@@ -1167,24 +1291,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estimatedEndDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isCompletedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource commentBindingSource;
-        private DevAppTableAdapters.CommentTableAdapter commentTableAdapter;
-        private System.Windows.Forms.BindingSource collaborationBindingSource;
-        private DevAppTableAdapters.CollaborationTableAdapter collaborationTableAdapter;
-        private System.Windows.Forms.BindingSource milestoneBindingSource;
-        private DevAppTableAdapters.MilestoneTableAdapter milestoneTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visibilityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn devIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn projIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn milestoneIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn projIDDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateAchievedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource developerBindingSource;
-        private DevAppTableAdapters.DeveloperTableAdapter developerTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
+        private DevAppTableAdapters.CommentDetailsTableAdapter commentDetailsTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn devIDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
@@ -1192,5 +1307,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button btnDeny;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn milestoneIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateAchievedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btnInsertMilestone;
     }
 }

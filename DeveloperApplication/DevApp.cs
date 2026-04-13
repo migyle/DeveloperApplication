@@ -4,12 +4,18 @@
 
     partial class DevApp
     {
+        partial class AllCommentsDataTable
+        {
+        }
     }
 }
 
-namespace DeveloperApplication.DevAppTableAdapters {
-    
-    
+namespace DeveloperApplication.DevAppTableAdapters
+{
+    partial class MilestoneTableAdapter
+    {
+    }
+
     public partial class DeveloperTableAdapter {
     }
 }
