@@ -52,6 +52,8 @@
             this.cmbVisibility = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpDateCreated = new System.Windows.Forms.DateTimePicker();
             this.btnArchiveComment = new System.Windows.Forms.Button();
             this.btnUpdateComment = new System.Windows.Forms.Button();
             this.rtbCommentDescription = new System.Windows.Forms.RichTextBox();
@@ -115,8 +117,6 @@
             this.projectTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.ProjectTableAdapter();
             this.collaborationTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.CollaborationTableAdapter();
             this.commentTableAdapter = new DeveloperApplication.DevAppTableAdapters.CommentTableAdapter();
-            this.dtpDateCreated = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollabReq)).BeginInit();
@@ -396,6 +396,23 @@
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "YOUR COMMENTS";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(329, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 16);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Date Created";
+            // 
+            // dtpDateCreated
+            // 
+            this.dtpDateCreated.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateCreated.Location = new System.Drawing.Point(332, 155);
+            this.dtpDateCreated.Name = "dtpDateCreated";
+            this.dtpDateCreated.Size = new System.Drawing.Size(105, 22);
+            this.dtpDateCreated.TabIndex = 10;
             // 
             // btnArchiveComment
             // 
@@ -834,7 +851,7 @@
             this.isCompletedDataGridViewCheckBoxColumn,
             this.visibilityDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.dgvOtherProjects.DataSource = this.projectBindingSource;
+            this.dgvOtherProjects.DataSource = this.projectBindingSource1;
             this.dgvOtherProjects.Location = new System.Drawing.Point(15, 82);
             this.dgvOtherProjects.Name = "dgvOtherProjects";
             this.dgvOtherProjects.ReadOnly = true;
@@ -998,23 +1015,6 @@
             // commentTableAdapter
             // 
             this.commentTableAdapter.ClearBeforeFill = true;
-            // 
-            // dtpDateCreated
-            // 
-            this.dtpDateCreated.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateCreated.Location = new System.Drawing.Point(332, 155);
-            this.dtpDateCreated.Name = "dtpDateCreated";
-            this.dtpDateCreated.Size = new System.Drawing.Size(105, 22);
-            this.dtpDateCreated.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(329, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Date Created";
             // 
             // frmOtherProjects
             // 

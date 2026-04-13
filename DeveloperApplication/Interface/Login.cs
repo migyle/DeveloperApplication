@@ -24,7 +24,7 @@ namespace DeveloperApplication
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            developerTableAdapter1.Fill(devApp1.Developer);
         }
 
         public static class Globals
@@ -36,7 +36,6 @@ namespace DeveloperApplication
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
@@ -64,12 +63,12 @@ namespace DeveloperApplication
                         Globals.devName = devApp1.Developer.Rows[0].Field<string>("name") + " " + devApp1.Developer.Rows[0].Field<string>("surname");
 
                         MessageBox.Show("Login successful! Welcome, " + devApp1.Developer.Rows[0].Field<string>("name"));
-                       
+
                         //frmHome home = get();
                         //home.PerformLogin();
 
 
-                        
+
 
                         frmMyProjects myProjects = new frmMyProjects();
                         myProjects.MdiParent = this.MdiParent;

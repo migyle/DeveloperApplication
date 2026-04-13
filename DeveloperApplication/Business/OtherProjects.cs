@@ -20,11 +20,8 @@ namespace DeveloperApplication.Business
 
         private void frmOtherProjects_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'devApp.Comment' table. You can move, or remove it, as needed.
-            //this.commentTableAdapter.Fill(this.devApp.Comment);
-            //// TODO: This line of code loads data into the 'devApp1.Developer' table. You can move, or remove it, as needed.
-            //this.developerTableAdapter.Fill(this.devApp1.Developer);
-            projectTableAdapter.FillOtherProjects(devApp1.Project);
+            
+            projectTableAdapter.FillOtherProjects(devApp1.Project,frmLogin.Globals.devID);
             projectTableAdapter1.FillByMyCollabReq(devApp1.Project, frmLogin.Globals.devID);
             commentTableAdapter.FillByDevID(devApp1.Comment, frmLogin.Globals.devID);
         }
@@ -32,7 +29,7 @@ namespace DeveloperApplication.Business
         private void rbAll_CheckedChanged(object sender, EventArgs e)
         {
             if (rbAll.Checked) {
-                projectTableAdapter.FillOtherProjects(devApp1.Project);
+                projectTableAdapter.FillOtherProjects(devApp1.Project, frmLogin.Globals.devID);
             }
         }
 

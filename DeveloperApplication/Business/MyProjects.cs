@@ -21,11 +21,13 @@ namespace DeveloperApplication.Business
 
         private void frmMyProjects_Load(object sender, EventArgs e)
         {
-            projectTableAdapter.FillByDevID(devApp1.Project, frmLogin.Globals.devID);
-            commentTableAdapter.FillByProjID(devApp1.Comment, Convert.ToInt32(dgvMyProjects.CurrentRow.Cells[0].Value));
-            milestoneTableAdapter.FillByProjID(devApp1.Milestone, Convert.ToInt32(dgvMyProjects.CurrentRow.Cells[0].Value));
-            developerTableAdapter.FillCollaborators(devApp1.Developer, Convert.ToInt32(dgvMyProjects.CurrentRow.Cells[0].Value));
-
+            //if (dgvMyProjects.CurrentRow != null)
+            //{
+                projectTableAdapter.FillByDevID(devApp1.Project, frmLogin.Globals.devID);
+                commentTableAdapter.FillByProjID(devApp1.Comment, Convert.ToInt32(dgvMyProjects.CurrentRow.Cells[0].Value));
+                milestoneTableAdapter.FillByProjID(devApp1.Milestone, Convert.ToInt32(dgvMyProjects.CurrentRow.Cells[0].Value));
+                developerTableAdapter.FillCollaborators(devApp1.Developer, Convert.ToInt32(dgvMyProjects.CurrentRow.Cells[0].Value));
+            //}
         }
 
         private void dgvMyProjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
