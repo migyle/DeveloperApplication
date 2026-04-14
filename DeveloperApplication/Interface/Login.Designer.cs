@@ -86,7 +86,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(265, 29);
             this.txtEmail.TabIndex = 2;
-            this.txtEmail.Text = "naidoo.migyle@gmail.com";
             // 
             // txtPassword
             // 
@@ -94,7 +93,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(265, 29);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.Text = "Dev@11!code";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
@@ -161,7 +159,7 @@
             this.groupboxPasswordRecovery.Controls.Add(this.btnRecovery);
             this.groupboxPasswordRecovery.Controls.Add(this.txtRecoveryCode);
             this.groupboxPasswordRecovery.Controls.Add(this.label2);
-            this.groupboxPasswordRecovery.Location = new System.Drawing.Point(7, 19);
+            this.groupboxPasswordRecovery.Location = new System.Drawing.Point(7, 56);
             this.groupboxPasswordRecovery.Name = "groupboxPasswordRecovery";
             this.groupboxPasswordRecovery.Size = new System.Drawing.Size(383, 390);
             this.groupboxPasswordRecovery.TabIndex = 21;
