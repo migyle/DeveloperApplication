@@ -88,8 +88,13 @@ namespace DeveloperApplication.Interface
                     er = true;
                 }
 
-            
-                if (er == false)
+                if (txtConfirmPass.Text != txtPassword.Text || txtPassword.Text != txtConfirmPass.Text)
+                {
+                    error += "Password and Confirmed Password do not match.\n";
+                    er = true;
+                }
+
+                    if (er == false)
                 {
 
                     var hasher = new PasswordHasher<string>();
@@ -117,6 +122,32 @@ namespace DeveloperApplication.Interface
         }
 
         private void frmSignUp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConfirmPass_TextChanged(object sender, EventArgs e)
+        {
+            if (txtConfirmPass.Text != txtPassword.Text || txtPassword.Text != txtConfirmPass.Text)
+            {
+                txtPassword.ForeColor = Color.DarkRed;
+                txtConfirmPass.ForeColor = Color.DarkRed;
+            }
+            else
+            {
+                txtPassword.ForeColor = Color.DarkGreen;
+                txtConfirmPass.ForeColor = Color.DarkGreen;
+            }
+        }
+        private bool passwordVisible = false;
+        private void btnTogglePassword_Click(object sender, EventArgs e)
+        {
+            passwordVisible = !passwordVisible;
+            txtPassword.UseSystemPasswordChar = !passwordVisible;
+            txtConfirmPass.UseSystemPasswordChar = !passwordVisible;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

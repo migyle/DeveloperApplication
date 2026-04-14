@@ -4,6 +4,10 @@
 
     partial class DevApp
     {
+        partial class DeveloperLeaderboardDataTable
+        {
+        }
+
         partial class AllCommentsDataTable
         {
         }

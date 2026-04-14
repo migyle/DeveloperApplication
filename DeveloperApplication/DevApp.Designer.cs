@@ -36,6 +36,10 @@ namespace DeveloperApplication {
         
         private CommentDetailsDataTable tableCommentDetails;
         
+        private DeveloperLeaderboardDataTable tableDeveloperLeaderboard;
+        
+        private ProjectTrendsDataTable tableProjectTrends;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -81,6 +85,12 @@ namespace DeveloperApplication {
                 }
                 if ((ds.Tables["CommentDetails"] != null)) {
                     base.Tables.Add(new CommentDetailsDataTable(ds.Tables["CommentDetails"]));
+                }
+                if ((ds.Tables["DeveloperLeaderboard"] != null)) {
+                    base.Tables.Add(new DeveloperLeaderboardDataTable(ds.Tables["DeveloperLeaderboard"]));
+                }
+                if ((ds.Tables["ProjectTrends"] != null)) {
+                    base.Tables.Add(new ProjectTrendsDataTable(ds.Tables["ProjectTrends"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -157,6 +167,26 @@ namespace DeveloperApplication {
         public CommentDetailsDataTable CommentDetails {
             get {
                 return this.tableCommentDetails;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DeveloperLeaderboardDataTable DeveloperLeaderboard {
+            get {
+                return this.tableDeveloperLeaderboard;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ProjectTrendsDataTable ProjectTrends {
+            get {
+                return this.tableProjectTrends;
             }
         }
         
@@ -245,6 +275,12 @@ namespace DeveloperApplication {
                 if ((ds.Tables["CommentDetails"] != null)) {
                     base.Tables.Add(new CommentDetailsDataTable(ds.Tables["CommentDetails"]));
                 }
+                if ((ds.Tables["DeveloperLeaderboard"] != null)) {
+                    base.Tables.Add(new DeveloperLeaderboardDataTable(ds.Tables["DeveloperLeaderboard"]));
+                }
+                if ((ds.Tables["ProjectTrends"] != null)) {
+                    base.Tables.Add(new ProjectTrendsDataTable(ds.Tables["ProjectTrends"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -314,6 +350,18 @@ namespace DeveloperApplication {
                     this.tableCommentDetails.InitVars();
                 }
             }
+            this.tableDeveloperLeaderboard = ((DeveloperLeaderboardDataTable)(base.Tables["DeveloperLeaderboard"]));
+            if ((initTable == true)) {
+                if ((this.tableDeveloperLeaderboard != null)) {
+                    this.tableDeveloperLeaderboard.InitVars();
+                }
+            }
+            this.tableProjectTrends = ((ProjectTrendsDataTable)(base.Tables["ProjectTrends"]));
+            if ((initTable == true)) {
+                if ((this.tableProjectTrends != null)) {
+                    this.tableProjectTrends.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +384,10 @@ namespace DeveloperApplication {
             base.Tables.Add(this.tableMilestone);
             this.tableCommentDetails = new CommentDetailsDataTable();
             base.Tables.Add(this.tableCommentDetails);
+            this.tableDeveloperLeaderboard = new DeveloperLeaderboardDataTable();
+            base.Tables.Add(this.tableDeveloperLeaderboard);
+            this.tableProjectTrends = new ProjectTrendsDataTable();
+            base.Tables.Add(this.tableProjectTrends);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +423,18 @@ namespace DeveloperApplication {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private bool ShouldSerializeCommentDetails() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private bool ShouldSerializeDeveloperLeaderboard() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private bool ShouldSerializeProjectTrends() {
             return false;
         }
         
@@ -446,6 +510,12 @@ namespace DeveloperApplication {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public delegate void CommentDetailsRowChangeEventHandler(object sender, CommentDetailsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public delegate void DeveloperLeaderboardRowChangeEventHandler(object sender, DeveloperLeaderboardRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public delegate void ProjectTrendsRowChangeEventHandler(object sender, ProjectTrendsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2505,6 +2575,715 @@ namespace DeveloperApplication {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DeveloperLeaderboardDataTable : global::System.Data.TypedTableBase<DeveloperLeaderboardRow> {
+            
+            private global::System.Data.DataColumn columndevID;
+            
+            private global::System.Data.DataColumn columnname;
+            
+            private global::System.Data.DataColumn columnsurname;
+            
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columnDeveloperStatus;
+            
+            private global::System.Data.DataColumn columnTotalProjectsCompleted;
+            
+            private global::System.Data.DataColumn columnCompletedProjects;
+            
+            private global::System.Data.DataColumn columnActiveProjects;
+            
+            private global::System.Data.DataColumn columnArchivedProjects;
+            
+            private global::System.Data.DataColumn columnCompletionRate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardDataTable() {
+                this.TableName = "DeveloperLeaderboard";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            internal DeveloperLeaderboardDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected DeveloperLeaderboardDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn devIDColumn {
+                get {
+                    return this.columndevID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn nameColumn {
+                get {
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn surnameColumn {
+                get {
+                    return this.columnsurname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn DeveloperStatusColumn {
+                get {
+                    return this.columnDeveloperStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn TotalProjectsCompletedColumn {
+                get {
+                    return this.columnTotalProjectsCompleted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn CompletedProjectsColumn {
+                get {
+                    return this.columnCompletedProjects;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn ActiveProjectsColumn {
+                get {
+                    return this.columnActiveProjects;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn ArchivedProjectsColumn {
+                get {
+                    return this.columnArchivedProjects;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn CompletionRateColumn {
+                get {
+                    return this.columnCompletionRate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardRow this[int index] {
+                get {
+                    return ((DeveloperLeaderboardRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event DeveloperLeaderboardRowChangeEventHandler DeveloperLeaderboardRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event DeveloperLeaderboardRowChangeEventHandler DeveloperLeaderboardRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event DeveloperLeaderboardRowChangeEventHandler DeveloperLeaderboardRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event DeveloperLeaderboardRowChangeEventHandler DeveloperLeaderboardRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void AddDeveloperLeaderboardRow(DeveloperLeaderboardRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardRow AddDeveloperLeaderboardRow(string name, string surname, string email, string DeveloperStatus, int TotalProjectsCompleted, int CompletedProjects, int ActiveProjects, int ArchivedProjects, decimal CompletionRate) {
+                DeveloperLeaderboardRow rowDeveloperLeaderboardRow = ((DeveloperLeaderboardRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        name,
+                        surname,
+                        email,
+                        DeveloperStatus,
+                        TotalProjectsCompleted,
+                        CompletedProjects,
+                        ActiveProjects,
+                        ArchivedProjects,
+                        CompletionRate};
+                rowDeveloperLeaderboardRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDeveloperLeaderboardRow);
+                return rowDeveloperLeaderboardRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardRow FindBydevID(int devID) {
+                return ((DeveloperLeaderboardRow)(this.Rows.Find(new object[] {
+                            devID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DeveloperLeaderboardDataTable cln = ((DeveloperLeaderboardDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DeveloperLeaderboardDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            internal void InitVars() {
+                this.columndevID = base.Columns["devID"];
+                this.columnname = base.Columns["name"];
+                this.columnsurname = base.Columns["surname"];
+                this.columnemail = base.Columns["email"];
+                this.columnDeveloperStatus = base.Columns["DeveloperStatus"];
+                this.columnTotalProjectsCompleted = base.Columns["TotalProjectsCompleted"];
+                this.columnCompletedProjects = base.Columns["CompletedProjects"];
+                this.columnActiveProjects = base.Columns["ActiveProjects"];
+                this.columnArchivedProjects = base.Columns["ArchivedProjects"];
+                this.columnCompletionRate = base.Columns["CompletionRate"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            private void InitClass() {
+                this.columndevID = new global::System.Data.DataColumn("devID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndevID);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columnsurname = new global::System.Data.DataColumn("surname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsurname);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columnDeveloperStatus = new global::System.Data.DataColumn("DeveloperStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeveloperStatus);
+                this.columnTotalProjectsCompleted = new global::System.Data.DataColumn("TotalProjectsCompleted", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalProjectsCompleted);
+                this.columnCompletedProjects = new global::System.Data.DataColumn("CompletedProjects", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompletedProjects);
+                this.columnActiveProjects = new global::System.Data.DataColumn("ActiveProjects", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveProjects);
+                this.columnArchivedProjects = new global::System.Data.DataColumn("ArchivedProjects", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArchivedProjects);
+                this.columnCompletionRate = new global::System.Data.DataColumn("CompletionRate", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompletionRate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columndevID}, true));
+                this.columndevID.AutoIncrement = true;
+                this.columndevID.AutoIncrementSeed = -1;
+                this.columndevID.AutoIncrementStep = -1;
+                this.columndevID.AllowDBNull = false;
+                this.columndevID.ReadOnly = true;
+                this.columndevID.Unique = true;
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 50;
+                this.columnsurname.AllowDBNull = false;
+                this.columnsurname.MaxLength = 50;
+                this.columnemail.AllowDBNull = false;
+                this.columnemail.MaxLength = 50;
+                this.columnDeveloperStatus.AllowDBNull = false;
+                this.columnDeveloperStatus.MaxLength = 50;
+                this.columnTotalProjectsCompleted.ReadOnly = true;
+                this.columnCompletedProjects.ReadOnly = true;
+                this.columnActiveProjects.ReadOnly = true;
+                this.columnArchivedProjects.ReadOnly = true;
+                this.columnCompletionRate.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardRow NewDeveloperLeaderboardRow() {
+                return ((DeveloperLeaderboardRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DeveloperLeaderboardRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DeveloperLeaderboardRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DeveloperLeaderboardRowChanged != null)) {
+                    this.DeveloperLeaderboardRowChanged(this, new DeveloperLeaderboardRowChangeEvent(((DeveloperLeaderboardRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DeveloperLeaderboardRowChanging != null)) {
+                    this.DeveloperLeaderboardRowChanging(this, new DeveloperLeaderboardRowChangeEvent(((DeveloperLeaderboardRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DeveloperLeaderboardRowDeleted != null)) {
+                    this.DeveloperLeaderboardRowDeleted(this, new DeveloperLeaderboardRowChangeEvent(((DeveloperLeaderboardRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DeveloperLeaderboardRowDeleting != null)) {
+                    this.DeveloperLeaderboardRowDeleting(this, new DeveloperLeaderboardRowChangeEvent(((DeveloperLeaderboardRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void RemoveDeveloperLeaderboardRow(DeveloperLeaderboardRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DevApp ds = new DevApp();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DeveloperLeaderboardDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ProjectTrendsDataTable : global::System.Data.TypedTableBase<ProjectTrendsRow> {
+            
+            private global::System.Data.DataColumn columnYear;
+            
+            private global::System.Data.DataColumn columnMonth;
+            
+            private global::System.Data.DataColumn columnProjectsStarted;
+            
+            private global::System.Data.DataColumn columnProjectsCompleted;
+            
+            private global::System.Data.DataColumn columnCompletionRate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public ProjectTrendsDataTable() {
+                this.TableName = "ProjectTrends";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            internal ProjectTrendsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected ProjectTrendsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn YearColumn {
+                get {
+                    return this.columnYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn MonthColumn {
+                get {
+                    return this.columnMonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn ProjectsStartedColumn {
+                get {
+                    return this.columnProjectsStarted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn ProjectsCompletedColumn {
+                get {
+                    return this.columnProjectsCompleted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn CompletionRateColumn {
+                get {
+                    return this.columnCompletionRate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public ProjectTrendsRow this[int index] {
+                get {
+                    return ((ProjectTrendsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event ProjectTrendsRowChangeEventHandler ProjectTrendsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event ProjectTrendsRowChangeEventHandler ProjectTrendsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event ProjectTrendsRowChangeEventHandler ProjectTrendsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public event ProjectTrendsRowChangeEventHandler ProjectTrendsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void AddProjectTrendsRow(ProjectTrendsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public ProjectTrendsRow AddProjectTrendsRow(int Year, int Month, int ProjectsStarted, int ProjectsCompleted, decimal CompletionRate) {
+                ProjectTrendsRow rowProjectTrendsRow = ((ProjectTrendsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Year,
+                        Month,
+                        ProjectsStarted,
+                        ProjectsCompleted,
+                        CompletionRate};
+                rowProjectTrendsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowProjectTrendsRow);
+                return rowProjectTrendsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ProjectTrendsDataTable cln = ((ProjectTrendsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ProjectTrendsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            internal void InitVars() {
+                this.columnYear = base.Columns["Year"];
+                this.columnMonth = base.Columns["Month"];
+                this.columnProjectsStarted = base.Columns["ProjectsStarted"];
+                this.columnProjectsCompleted = base.Columns["ProjectsCompleted"];
+                this.columnCompletionRate = base.Columns["CompletionRate"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            private void InitClass() {
+                this.columnYear = new global::System.Data.DataColumn("Year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYear);
+                this.columnMonth = new global::System.Data.DataColumn("Month", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonth);
+                this.columnProjectsStarted = new global::System.Data.DataColumn("ProjectsStarted", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjectsStarted);
+                this.columnProjectsCompleted = new global::System.Data.DataColumn("ProjectsCompleted", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjectsCompleted);
+                this.columnCompletionRate = new global::System.Data.DataColumn("CompletionRate", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompletionRate);
+                this.columnYear.ReadOnly = true;
+                this.columnMonth.ReadOnly = true;
+                this.columnProjectsStarted.ReadOnly = true;
+                this.columnProjectsCompleted.ReadOnly = true;
+                this.columnCompletionRate.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public ProjectTrendsRow NewProjectTrendsRow() {
+                return ((ProjectTrendsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ProjectTrendsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ProjectTrendsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ProjectTrendsRowChanged != null)) {
+                    this.ProjectTrendsRowChanged(this, new ProjectTrendsRowChangeEvent(((ProjectTrendsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ProjectTrendsRowChanging != null)) {
+                    this.ProjectTrendsRowChanging(this, new ProjectTrendsRowChangeEvent(((ProjectTrendsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ProjectTrendsRowDeleted != null)) {
+                    this.ProjectTrendsRowDeleted(this, new ProjectTrendsRowChangeEvent(((ProjectTrendsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ProjectTrendsRowDeleting != null)) {
+                    this.ProjectTrendsRowDeleting(this, new ProjectTrendsRowChangeEvent(((ProjectTrendsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void RemoveProjectTrendsRow(ProjectTrendsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DevApp ds = new DevApp();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ProjectTrendsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DeveloperRow : global::System.Data.DataRow {
@@ -3047,6 +3826,374 @@ namespace DeveloperApplication {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DeveloperLeaderboardRow : global::System.Data.DataRow {
+            
+            private DeveloperLeaderboardDataTable tableDeveloperLeaderboard;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            internal DeveloperLeaderboardRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDeveloperLeaderboard = ((DeveloperLeaderboardDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int devID {
+                get {
+                    return ((int)(this[this.tableDeveloperLeaderboard.devIDColumn]));
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.devIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string name {
+                get {
+                    return ((string)(this[this.tableDeveloperLeaderboard.nameColumn]));
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string surname {
+                get {
+                    return ((string)(this[this.tableDeveloperLeaderboard.surnameColumn]));
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.surnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string email {
+                get {
+                    return ((string)(this[this.tableDeveloperLeaderboard.emailColumn]));
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string DeveloperStatus {
+                get {
+                    return ((string)(this[this.tableDeveloperLeaderboard.DeveloperStatusColumn]));
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.DeveloperStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int TotalProjectsCompleted {
+                get {
+                    try {
+                        return ((int)(this[this.tableDeveloperLeaderboard.TotalProjectsCompletedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalProjectsCompleted\' in table \'DeveloperLeaderboard\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.TotalProjectsCompletedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int CompletedProjects {
+                get {
+                    try {
+                        return ((int)(this[this.tableDeveloperLeaderboard.CompletedProjectsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CompletedProjects\' in table \'DeveloperLeaderboard\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.CompletedProjectsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int ActiveProjects {
+                get {
+                    try {
+                        return ((int)(this[this.tableDeveloperLeaderboard.ActiveProjectsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveProjects\' in table \'DeveloperLeaderboard\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.ActiveProjectsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int ArchivedProjects {
+                get {
+                    try {
+                        return ((int)(this[this.tableDeveloperLeaderboard.ArchivedProjectsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ArchivedProjects\' in table \'DeveloperLeaderboard\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.ArchivedProjectsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public decimal CompletionRate {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDeveloperLeaderboard.CompletionRateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CompletionRate\' in table \'DeveloperLeaderboard\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDeveloperLeaderboard.CompletionRateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsTotalProjectsCompletedNull() {
+                return this.IsNull(this.tableDeveloperLeaderboard.TotalProjectsCompletedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetTotalProjectsCompletedNull() {
+                this[this.tableDeveloperLeaderboard.TotalProjectsCompletedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsCompletedProjectsNull() {
+                return this.IsNull(this.tableDeveloperLeaderboard.CompletedProjectsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetCompletedProjectsNull() {
+                this[this.tableDeveloperLeaderboard.CompletedProjectsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsActiveProjectsNull() {
+                return this.IsNull(this.tableDeveloperLeaderboard.ActiveProjectsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetActiveProjectsNull() {
+                this[this.tableDeveloperLeaderboard.ActiveProjectsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsArchivedProjectsNull() {
+                return this.IsNull(this.tableDeveloperLeaderboard.ArchivedProjectsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetArchivedProjectsNull() {
+                this[this.tableDeveloperLeaderboard.ArchivedProjectsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsCompletionRateNull() {
+                return this.IsNull(this.tableDeveloperLeaderboard.CompletionRateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetCompletionRateNull() {
+                this[this.tableDeveloperLeaderboard.CompletionRateColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ProjectTrendsRow : global::System.Data.DataRow {
+            
+            private ProjectTrendsDataTable tableProjectTrends;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            internal ProjectTrendsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableProjectTrends = ((ProjectTrendsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int Year {
+                get {
+                    try {
+                        return ((int)(this[this.tableProjectTrends.YearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Year\' in table \'ProjectTrends\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProjectTrends.YearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int Month {
+                get {
+                    try {
+                        return ((int)(this[this.tableProjectTrends.MonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Month\' in table \'ProjectTrends\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProjectTrends.MonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int ProjectsStarted {
+                get {
+                    try {
+                        return ((int)(this[this.tableProjectTrends.ProjectsStartedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProjectsStarted\' in table \'ProjectTrends\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProjectTrends.ProjectsStartedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int ProjectsCompleted {
+                get {
+                    try {
+                        return ((int)(this[this.tableProjectTrends.ProjectsCompletedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProjectsCompleted\' in table \'ProjectTrends\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProjectTrends.ProjectsCompletedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public decimal CompletionRate {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableProjectTrends.CompletionRateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CompletionRate\' in table \'ProjectTrends\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProjectTrends.CompletionRateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsYearNull() {
+                return this.IsNull(this.tableProjectTrends.YearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetYearNull() {
+                this[this.tableProjectTrends.YearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsMonthNull() {
+                return this.IsNull(this.tableProjectTrends.MonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetMonthNull() {
+                this[this.tableProjectTrends.MonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsProjectsStartedNull() {
+                return this.IsNull(this.tableProjectTrends.ProjectsStartedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetProjectsStartedNull() {
+                this[this.tableProjectTrends.ProjectsStartedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsProjectsCompletedNull() {
+                return this.IsNull(this.tableProjectTrends.ProjectsCompletedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetProjectsCompletedNull() {
+                this[this.tableProjectTrends.ProjectsCompletedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsCompletionRateNull() {
+                return this.IsNull(this.tableProjectTrends.CompletionRateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetCompletionRateNull() {
+                this[this.tableProjectTrends.CompletionRateColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -3236,6 +4383,74 @@ namespace DeveloperApplication {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public CommentDetailsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public class DeveloperLeaderboardRowChangeEvent : global::System.EventArgs {
+            
+            private DeveloperLeaderboardRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardRowChangeEvent(DeveloperLeaderboardRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public DeveloperLeaderboardRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public class ProjectTrendsRowChangeEvent : global::System.EventArgs {
+            
+            private ProjectTrendsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public ProjectTrendsRowChangeEvent(ProjectTrendsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public ProjectTrendsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3640,7 +4855,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[11];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status\r" +
@@ -3648,7 +4863,32 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT 
+            this._commandCollection[1].CommandText = "SELECT COUNT(email) FROM Developer WHERE email=@email";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@email";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "email";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status\r" +
+                "\nFROM     Developer WHERE devID=@devID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@devID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "devID";
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT 
     devID, 
     name, 
     surname, 
@@ -3659,16 +4899,16 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status
     status
 FROM Developer
 WHERE devID IN (SELECT devID FROM Collaboration WHERE projID=@projID AND status ='Requested') AND status='Active'";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@projID";
             param.DbType = global::System.Data.DbType.Int32;
             param.Size = 4;
             param.IsNullable = true;
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT 
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT 
     devID, 
     name, 
     surname, 
@@ -3679,19 +4919,19 @@ WHERE devID IN (SELECT devID FROM Collaboration WHERE projID=@projID AND status 
     status
 FROM Developer
 WHERE devID IN (SELECT devID FROM Collaboration WHERE projID=@projID AND status ='Approved') AND status='Active'";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@projID";
             param.DbType = global::System.Data.DbType.Int32;
             param.Size = 4;
             param.IsNullable = true;
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status\r" +
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status\r" +
                 "\nFROM     Developer\r\nWHERE name LIKE \'%\'+@name+\'%\' OR surname LIKE \'%\'+@name+\'%\'" +
                 " ";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@name";
             param.DbType = global::System.Data.DbType.AnsiString;
@@ -3699,12 +4939,12 @@ WHERE devID IN (SELECT devID FROM Collaboration WHERE projID=@projID AND status 
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "name";
-            this._commandCollection[3].Parameters.Add(param);
-            this._commandCollection[4] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO [Developer] ([name], [surname], [email], [dateOfBirth], [contactNumber], [password], [status]) VALUES (@name, @surname, @email, @dateOfBirth, @contactNumber, @password, @status);
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"INSERT INTO [Developer] ([name], [surname], [email], [dateOfBirth], [contactNumber], [password], [status]) VALUES (@name, @surname, @email, @dateOfBirth, @contactNumber, @password, @status);
 SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status FROM Developer WHERE (devID = SCOPE_IDENTITY())";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@name";
             param.DbType = global::System.Data.DbType.AnsiString;
@@ -3712,7 +4952,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "name";
-            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[6].Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@surname";
             param.DbType = global::System.Data.DbType.AnsiString;
@@ -3720,71 +4960,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "surname";
-            this._commandCollection[4].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@email";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "email";
-            this._commandCollection[4].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@dateOfBirth";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
-            param.Size = 4;
-            param.IsNullable = true;
-            param.SourceColumn = "dateOfBirth";
-            this._commandCollection[4].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@contactNumber";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.Char;
-            param.Size = 10;
-            param.IsNullable = true;
-            param.SourceColumn = "contactNumber";
-            this._commandCollection[4].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@password";
-            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "password";
-            this._commandCollection[4].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "status";
-            this._commandCollection[4].Parameters.Add(param);
-            this._commandCollection[5] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE [Developer] SET [password] = @password WHERE ([devID] = @Original_devID)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@password";
-            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "password";
-            this._commandCollection[5].Parameters.Add(param);
-            param = new global::Microsoft.Data.SqlClient.SqlParameter();
-            param.ParameterName = "@Original_devID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SqlDbType = global::System.Data.SqlDbType.Int;
-            param.Size = 4;
-            param.IsNullable = true;
-            param.SourceColumn = "devID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::Microsoft.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT contactNumber, dateOfBirth, devID, email, name, password, status, surname " +
-                "FROM Developer WHERE (email = @email AND status =\'Active\')";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(param);
             param = new global::Microsoft.Data.SqlClient.SqlParameter();
             param.ParameterName = "@email";
             param.DbType = global::System.Data.DbType.AnsiString;
@@ -3793,6 +4969,153 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
             param.IsNullable = true;
             param.SourceColumn = "email";
             this._commandCollection[6].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            this._commandCollection[6].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@contactNumber";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            this._commandCollection[6].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@password";
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "password";
+            this._commandCollection[6].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@status";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._commandCollection[6].Parameters.Add(param);
+            this._commandCollection[7] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "UPDATE [Developer] SET [name] = @name, [surname] = @surname, [email] = @email, [d" +
+                "ateOfBirth] = @dateOfBirth, [contactNumber] = @contactNumber, [status] = @status" +
+                " WHERE ([devID] = @Original_devID)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@name";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "name";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@surname";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "surname";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@email";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "email";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@dateOfBirth";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SqlDbType = global::System.Data.SqlDbType.SmallDateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "dateOfBirth";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@contactNumber";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.Char;
+            param.Size = 10;
+            param.IsNullable = true;
+            param.SourceColumn = "contactNumber";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@status";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_devID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "devID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[7].Parameters.Add(param);
+            this._commandCollection[8] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE [Developer] SET [password] = @password WHERE ([email] = @Original_email) ";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@password";
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "password";
+            this._commandCollection[8].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_email";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "email";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[9] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE [Developer] SET [password] = @password WHERE ([devID] = @Original_devID)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@password";
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "password";
+            this._commandCollection[9].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Original_devID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "devID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[10] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "SELECT contactNumber, dateOfBirth, devID, email, name, password, status, surname " +
+                "FROM Developer WHERE (email = @email AND status =\'Active\')";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@email";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "email";
+            this._commandCollection[10].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3823,8 +5146,34 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDevID(DevApp.DeveloperDataTable dataTable, int devID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(devID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DevApp.DeveloperDataTable GetDataBy7(int devID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(devID));
+            DevApp.DeveloperDataTable dataTable = new DevApp.DeveloperDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByRequestedCollab(DevApp.DeveloperDataTable dataTable, int projID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(projID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3838,7 +5187,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DevApp.DeveloperDataTable GetDataBy3(int projID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(projID));
             DevApp.DeveloperDataTable dataTable = new DevApp.DeveloperDataTable();
             this.Adapter.Fill(dataTable);
@@ -3850,7 +5199,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillCollaborators(DevApp.DeveloperDataTable dataTable, int projID) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(projID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3864,7 +5213,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DevApp.DeveloperDataTable GetDataBy2(int projID) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(projID));
             DevApp.DeveloperDataTable dataTable = new DevApp.DeveloperDataTable();
             this.Adapter.Fill(dataTable);
@@ -3876,7 +5225,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FilterByFullName(DevApp.DeveloperDataTable dataTable, string name) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -3895,7 +5244,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DevApp.DeveloperDataTable GetDataBy4(string name) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -3912,7 +5261,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int VerifyEmail(DevApp.DeveloperDataTable dataTable, string email) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
@@ -3930,8 +5279,8 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DevApp.DeveloperDataTable GetDataBy1(string email) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+        public virtual DevApp.DeveloperDataTable GetDataBy11(string email) {
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             if ((email == null)) {
                 throw new global::System.ArgumentNullException("email");
             }
@@ -4213,9 +5562,43 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> CountEmail(string email) {
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((email == null)) {
+                throw new global::System.ArgumentNullException("email");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(email));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string name, string surname, string email, System.DateTime dateOfBirth, string contactNumber, string password, string status) {
-            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -4274,8 +5657,98 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateDetails(string name, string surname, string email, System.DateTime dateOfBirth, string contactNumber, string status, int Original_devID) {
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(name));
+            }
+            if ((surname == null)) {
+                throw new global::System.ArgumentNullException("surname");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(surname));
+            }
+            if ((email == null)) {
+                throw new global::System.ArgumentNullException("email");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(email));
+            }
+            command.Parameters[3].Value = ((System.DateTime)(dateOfBirth));
+            if ((contactNumber == null)) {
+                throw new global::System.ArgumentNullException("contactNumber");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(contactNumber));
+            }
+            if ((status == null)) {
+                throw new global::System.ArgumentNullException("status");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(status));
+            }
+            command.Parameters[6].Value = ((int)(Original_devID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdatePassword(string password, string Original_email) {
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            if ((password == null)) {
+                throw new global::System.ArgumentNullException("password");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(password));
+            }
+            if ((Original_email == null)) {
+                throw new global::System.ArgumentNullException("Original_email");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Original_email));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string password, int Original_devID) {
-            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::Microsoft.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((password == null)) {
                 throw new global::System.ArgumentNullException("password");
             }
@@ -8213,6 +9686,445 @@ SELECT milestoneID, projID, title, dateAchieved, status FROM Milestone WHERE (mi
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(commentID));
             DevApp.CommentDetailsDataTable dataTable = new DevApp.CommentDetailsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DeveloperLeaderboardTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Microsoft.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::Microsoft.Data.SqlClient.SqlConnection _connection;
+        
+        private global::Microsoft.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::Microsoft.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public DeveloperLeaderboardTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        protected internal global::Microsoft.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        internal global::Microsoft.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Microsoft.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        internal global::Microsoft.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        protected global::Microsoft.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Microsoft.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "DeveloperLeaderboard";
+            tableMapping.ColumnMappings.Add("devID", "devID");
+            tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("surname", "surname");
+            tableMapping.ColumnMappings.Add("email", "email");
+            tableMapping.ColumnMappings.Add("DeveloperStatus", "DeveloperStatus");
+            tableMapping.ColumnMappings.Add("TotalProjectsCompleted", "TotalProjectsCompleted");
+            tableMapping.ColumnMappings.Add("CompletedProjects", "CompletedProjects");
+            tableMapping.ColumnMappings.Add("ActiveProjects", "ActiveProjects");
+            tableMapping.ColumnMappings.Add("ArchivedProjects", "ArchivedProjects");
+            tableMapping.ColumnMappings.Add("CompletionRate", "CompletionRate");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::DeveloperApplication.Properties.Settings.Default.DeveloperApplicationConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"    SELECT TOP (@TopCount)
+        d.devID,
+        d.name,
+        d.surname,
+        d.email,
+        d.status AS DeveloperStatus,
+
+        COUNT(p.projID) AS TotalProjectsCompleted,
+        SUM(CASE WHEN p.isCompleted = 1 THEN 1 ELSE 0 END) AS CompletedProjects,
+        SUM(CASE WHEN p.isCompleted = 0 AND p.status = 'Active' THEN 1 ELSE 0 END) AS ActiveProjects,
+        SUM(CASE WHEN p.status = 'Archived' THEN 1 ELSE 0 END) AS ArchivedProjects,
+        
+        CASE 
+            WHEN COUNT(p.projID) = 0 THEN 0
+            ELSE ROUND(100.0 * SUM(CASE WHEN p.isCompleted = 1 THEN 1 ELSE 0 END) / COUNT(p.projID), 1)
+        END AS CompletionRate
+        
+    FROM Developer d
+    
+    LEFT JOIN Project p ON d.devID = p.devID
+
+    WHERE 
+    (
+        @FilterType = 'All' OR d.status = @FilterType
+    )
+    AND
+    (
+        @SearchTerm IS NULL 
+        OR d.name LIKE '%' + @SearchTerm + '%' 
+        OR d.surname LIKE '%' + @SearchTerm + '%'
+        OR d.email LIKE '%' + @SearchTerm + '%'
+    )
+    
+    GROUP BY d.devID, d.name, d.surname, d.email, d.status
+    HAVING COUNT(p.projID) > 0
+    ORDER BY CompletedProjects DESC, CompletionRate DESC";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@TopCount";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.IsNullable = true;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@FilterType";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "DeveloperStatus";
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@SearchTerm";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.SqlDbType = global::System.Data.SqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "name";
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int FillDeveloperLeaderboard(DevApp.DeveloperLeaderboardDataTable dataTable, int TopCount, string FilterType, string SearchTerm) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TopCount));
+            if ((FilterType == null)) {
+                throw new global::System.ArgumentNullException("FilterType");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FilterType));
+            }
+            if ((SearchTerm == null)) {
+                throw new global::System.ArgumentNullException("SearchTerm");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(SearchTerm));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DevApp.DeveloperLeaderboardDataTable GetData(int TopCount, string FilterType, string SearchTerm) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TopCount));
+            if ((FilterType == null)) {
+                throw new global::System.ArgumentNullException("FilterType");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(FilterType));
+            }
+            if ((SearchTerm == null)) {
+                throw new global::System.ArgumentNullException("SearchTerm");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(SearchTerm));
+            }
+            DevApp.DeveloperLeaderboardDataTable dataTable = new DevApp.DeveloperLeaderboardDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ProjectTrendsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Microsoft.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::Microsoft.Data.SqlClient.SqlConnection _connection;
+        
+        private global::Microsoft.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::Microsoft.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public ProjectTrendsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        protected internal global::Microsoft.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        internal global::Microsoft.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Microsoft.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        internal global::Microsoft.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        protected global::Microsoft.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Microsoft.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ProjectTrends";
+            tableMapping.ColumnMappings.Add("Year", "Year");
+            tableMapping.ColumnMappings.Add("Month", "Month");
+            tableMapping.ColumnMappings.Add("ProjectsStarted", "ProjectsStarted");
+            tableMapping.ColumnMappings.Add("ProjectsCompleted", "ProjectsCompleted");
+            tableMapping.ColumnMappings.Add("CompletionRate", "CompletionRate");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::DeveloperApplication.Properties.Settings.Default.DeveloperApplicationConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"    SELECT 
+        YEAR(startDate) AS Year,
+        MONTH(startDate) AS Month,
+        COUNT(*) AS ProjectsStarted,
+        SUM(CASE WHEN isCompleted = 1 THEN 1 ELSE 0 END) AS ProjectsCompleted,
+        ROUND(100.0 * SUM(CASE WHEN isCompleted = 1 THEN 1 ELSE 0 END) / COUNT(*), 1) AS CompletionRate
+        
+    FROM Project
+    WHERE status = 'Active' OR isCompleted = 1
+    GROUP BY YEAR(startDate), MONTH(startDate)
+    ORDER BY Year DESC, Month DESC";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int FillProjectCompletionTrends(DevApp.ProjectTrendsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DevApp.ProjectTrendsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DevApp.ProjectTrendsDataTable dataTable = new DevApp.ProjectTrendsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -16,11 +16,12 @@ namespace DeveloperApplication.Business
         public frmOtherProjects()
         {
             InitializeComponent();
+            
         }
 
         private void frmOtherProjects_Load(object sender, EventArgs e)
         {
-            
+           
             projectTableAdapter.FillOtherProjects(devApp1.Project,frmLogin.Globals.devID);
             projectTableAdapter1.FillByMyCollabReq(devApp1.Project, frmLogin.Globals.devID);
             commentTableAdapter.FillByDevID(devApp1.Comment, frmLogin.Globals.devID);
@@ -28,7 +29,8 @@ namespace DeveloperApplication.Business
 
         private void rbAll_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbAll.Checked) {
+            if (rbAll.Checked)
+            {
                 projectTableAdapter.FillOtherProjects(devApp1.Project, frmLogin.Globals.devID);
             }
         }
@@ -44,30 +46,6 @@ namespace DeveloperApplication.Business
         private void txtSearchProj_TextChanged(object sender, EventArgs e)
         {
             projectTableAdapter.SearchByOtherProj(devApp1.Project, txtSearchProj.Text);
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtTitle.Text = dgvOtherProjects.CurrentRow.Cells[2].Value.ToString();
-            txtDescrip.Text = dgvOtherProjects.CurrentRow.Cells[3].Value.ToString();
-            cmbStage.Text = dgvOtherProjects.CurrentRow.Cells[4].Value.ToString();
-            txtSupport.Text = dgvOtherProjects.CurrentRow.Cells[5].Value.ToString();
-            dtpStartDate.Value = Convert.ToDateTime(dgvOtherProjects.CurrentRow.Cells[6].Value);
-            dtpEndDate.Value = Convert.ToDateTime(dgvOtherProjects.CurrentRow.Cells[7].Value);
-            cmbVisibility.Text = dgvOtherProjects.CurrentRow.Cells[9].Value.ToString();
-
-            if (dgvOtherProjects.CurrentRow.Cells[8].Value.ToString() == "True")
-            {
-                chkYes.Checked = true;
-                chkNo.Checked = false;
-            }
-            else
-            {
-                chkNo.Checked = true;
-                chkYes.Checked = false;
-            }
-            developerTableAdapter.FillCollaborators(devApp1.Developer, Convert.ToInt32(dgvOtherProjects.CurrentRow.Cells[0].Value));
-            commentTableAdapter.FillByDevID(devApp1.Comment, frmLogin.Globals.devID);
         }
 
         private void dgvCollabReq_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -150,7 +128,7 @@ namespace DeveloperApplication.Business
 
             try
                 {
-                    if (dgvComments.CurrentRow != null && !string.IsNullOrWhiteSpace(rtbAddComment.Text))
+                    if (dgvComments.CurrentRow != null && !string.IsNullOrWhiteSpace(rtbCommentDescription.Text))
                     {
                         int commentId = Convert.ToInt32(dgvComments.CurrentRow.Cells[0].Value);
                         commentTableAdapter.UpdateQuery(frmLogin.Globals.devID, Convert.ToInt32(dgvComments.CurrentRow.Cells[2].Value), rtbCommentDescription.Text, dtpDateCreated.Value, "Active", commentId);
@@ -190,6 +168,41 @@ namespace DeveloperApplication.Business
                     MessageBox.Show("Please select a comment to archive.");
                 }
             } 
+        }
+
+        private void dgvOtherProjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvComments_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rtbCommentDescription.Text = dgvComments.CurrentRow.Cells[3].Value.ToString();
+            dtpDateCreated.Value = Convert.ToDateTime(dgvComments.CurrentRow.Cells[4].Value);
+        }
+
+        private void dgvOtherProjects_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTitle.Text = dgvOtherProjects.CurrentRow.Cells[2].Value.ToString();
+            txtDescrip.Text = dgvOtherProjects.CurrentRow.Cells[3].Value.ToString();
+            cmbStage.Text = dgvOtherProjects.CurrentRow.Cells[4].Value.ToString();
+            txtSupport.Text = dgvOtherProjects.CurrentRow.Cells[5].Value.ToString();
+            dtpStartDate.Value = Convert.ToDateTime(dgvOtherProjects.CurrentRow.Cells[6].Value);
+            dtpEndDate.Value = Convert.ToDateTime(dgvOtherProjects.CurrentRow.Cells[7].Value);
+            cmbVisibility.Text = dgvOtherProjects.CurrentRow.Cells[9].Value.ToString();
+
+            if (dgvOtherProjects.CurrentRow.Cells[8].Value.ToString() == "True")
+            {
+                chkYes.Checked = true;
+                chkNo.Checked = false;
+            }
+            else
+            {
+                chkNo.Checked = true;
+                chkYes.Checked = false;
+            }
+            developerTableAdapter.FillCollaborators(devApp1.Developer, Convert.ToInt32(dgvOtherProjects.CurrentRow.Cells[0].Value));
+            commentTableAdapter.FillByDevID(devApp1.Comment, frmLogin.Globals.devID);
         }
     }
 }

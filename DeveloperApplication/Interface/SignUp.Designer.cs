@@ -42,15 +42,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.developerTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
             this.devApp1 = new DeveloperApplication.DevApp();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnTogglePassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,6 +124,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(243, 22);
             this.txtPassword.TabIndex = 8;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnLogin
             // 
@@ -167,14 +168,6 @@
             this.devApp1.DataSetName = "DevApp";
             this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(1386, 563);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 33);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -190,6 +183,8 @@
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(243, 22);
             this.txtConfirmPass.TabIndex = 14;
+            this.txtConfirmPass.UseSystemPasswordChar = true;
+            this.txtConfirmPass.TextChanged += new System.EventHandler(this.txtConfirmPass_TextChanged);
             // 
             // label8
             // 
@@ -225,18 +220,30 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Date Of Birth";
             // 
+            // btnTogglePassword
+            // 
+            this.btnTogglePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTogglePassword.Location = new System.Drawing.Point(1369, 563);
+            this.btnTogglePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTogglePassword.Name = "btnTogglePassword";
+            this.btnTogglePassword.Size = new System.Drawing.Size(38, 46);
+            this.btnTogglePassword.TabIndex = 19;
+            this.btnTogglePassword.Text = "👁";
+            this.btnTogglePassword.UseVisualStyleBackColor = true;
+            this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1536, 842);
+            this.Controls.Add(this.btnTogglePassword);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtConfirmPass);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnLogin);
@@ -254,7 +261,6 @@
             this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.frmSignUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,12 +282,12 @@
         private System.Windows.Forms.Label label6;
         private DevAppTableAdapters.DeveloperTableAdapter developerTableAdapter1;
         private DevApp devApp1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtConfirmPass;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnTogglePassword;
     }
 }
