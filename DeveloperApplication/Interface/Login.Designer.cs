@@ -34,9 +34,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.devApp1 = new DeveloperApplication.DevApp();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.developerTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSignUp = new System.Windows.Forms.Label();
             this.lblForgotPassword = new System.Windows.Forms.Label();
@@ -53,11 +50,14 @@
             this.txtRecoveryCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.devApp1 = new DeveloperApplication.DevApp();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.developerTableAdapter1 = new DeveloperApplication.DevAppTableAdapters.DeveloperTableAdapter();
             this.groupboxPasswordRecovery.SuspendLayout();
             this.pnlNewPass.SuspendLayout();
             this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -84,7 +84,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(227, 22);
             this.txtEmail.TabIndex = 2;
-            this.txtEmail.Text = "dev1@example.com";
+            this.txtEmail.Text = "naidoo.migyle@gmail.com";
             // 
             // txtPassword
             // 
@@ -104,20 +104,6 @@
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // devApp1
-            // 
-            this.devApp1.DataSetName = "DevApp";
-            this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.devApp1;
-            this.bindingSource1.Position = 0;
-            // 
-            // developerTableAdapter1
-            // 
-            this.developerTableAdapter1.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -293,6 +279,20 @@
             this.pnlLogin.Size = new System.Drawing.Size(490, 454);
             this.pnlLogin.TabIndex = 22;
             // 
+            // devApp1
+            // 
+            this.devApp1.DataSetName = "DevApp";
+            this.devApp1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.devApp1;
+            this.bindingSource1.Position = 0;
+            // 
+            // developerTableAdapter1
+            // 
+            this.developerTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,14 +304,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupboxPasswordRecovery.ResumeLayout(false);
             this.groupboxPasswordRecovery.PerformLayout();
             this.pnlNewPass.ResumeLayout(false);
             this.pnlNewPass.PerformLayout();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.devApp1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

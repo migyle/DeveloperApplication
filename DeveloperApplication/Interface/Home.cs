@@ -20,6 +20,8 @@ namespace DeveloperApplication.Interface
             projectsToolStripMenuItem.Visible =false;
             logOutToolStripMenuItem.Visible = false;
             nameToolStripMenuItem.Visible = false;
+            celebrationWallToolStripMenuItem.Visible = false;
+
         }
 
         public void FormSetup(Form myForm)
@@ -45,6 +47,7 @@ namespace DeveloperApplication.Interface
             nameToolStripMenuItem.Text = frmLogin.Globals.devName;
             logOutToolStripMenuItem.Visible = true;
             loginToolStripMenuItem1.Visible = false;
+            celebrationWallToolStripMenuItem.Visible = true;
 
         }
         private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -91,6 +94,7 @@ namespace DeveloperApplication.Interface
             nameToolStripMenuItem.Visible = false;
             logOutToolStripMenuItem.Visible = false;
             loginToolStripMenuItem1.Visible = true;
+            celebrationWallToolStripMenuItem.Visible = false;
 
         }
 
@@ -113,6 +117,12 @@ namespace DeveloperApplication.Interface
         {
             frmProfile profile = new frmProfile();
             FormSetup(profile);
+        }
+
+        private void celebrationWallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCelebrationWall celebrationWall = new frmCelebrationWall();
+            FormSetup(celebrationWall);
         }
     }
 }

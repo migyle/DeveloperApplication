@@ -35,6 +35,7 @@
             this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.celebrationWallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msHome.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,8 @@
             this.projectsToolStripMenuItem,
             this.loginToolStripMenuItem1,
             this.logOutToolStripMenuItem,
-            this.nameToolStripMenuItem});
+            this.nameToolStripMenuItem,
+            this.celebrationWallToolStripMenuItem});
             this.msHome.Location = new System.Drawing.Point(0, 0);
             this.msHome.Name = "msHome";
             this.msHome.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -101,6 +103,14 @@
             this.nameToolStripMenuItem.Text = "Name";
             this.nameToolStripMenuItem.Click += new System.EventHandler(this.nameToolStripMenuItem_Click);
             // 
+            // celebrationWallToolStripMenuItem
+            // 
+            this.celebrationWallToolStripMenuItem.Name = "celebrationWallToolStripMenuItem";
+            this.celebrationWallToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.celebrationWallToolStripMenuItem.Text = "Celebration Wall";
+            this.celebrationWallToolStripMenuItem.Visible = false;
+            this.celebrationWallToolStripMenuItem.Click += new System.EventHandler(this.celebrationWallToolStripMenuItem_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -128,5 +138,6 @@
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem1;
         private System.Windows.Forms.MenuStrip msHome;
+        private System.Windows.Forms.ToolStripMenuItem celebrationWallToolStripMenuItem;
     }
 }
