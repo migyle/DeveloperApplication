@@ -143,7 +143,7 @@
             // btnTogglePassword
             // 
             this.btnTogglePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTogglePassword.Location = new System.Drawing.Point(371, 214);
+            this.btnTogglePassword.Location = new System.Drawing.Point(367, 170);
             this.btnTogglePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnTogglePassword.Name = "btnTogglePassword";
             this.btnTogglePassword.Size = new System.Drawing.Size(38, 46);
@@ -155,12 +155,13 @@
             // groupboxPasswordRecovery
             // 
             this.groupboxPasswordRecovery.Controls.Add(this.pnlNewPass);
+            this.groupboxPasswordRecovery.Controls.Add(this.btnTogglePassword);
             this.groupboxPasswordRecovery.Controls.Add(this.btnRecovery);
             this.groupboxPasswordRecovery.Controls.Add(this.txtRecoveryCode);
             this.groupboxPasswordRecovery.Controls.Add(this.label2);
-            this.groupboxPasswordRecovery.Location = new System.Drawing.Point(255, 191);
+            this.groupboxPasswordRecovery.Location = new System.Drawing.Point(3, 13);
             this.groupboxPasswordRecovery.Name = "groupboxPasswordRecovery";
-            this.groupboxPasswordRecovery.Size = new System.Drawing.Size(478, 222);
+            this.groupboxPasswordRecovery.Size = new System.Drawing.Size(478, 423);
             this.groupboxPasswordRecovery.TabIndex = 21;
             this.groupboxPasswordRecovery.TabStop = false;
             this.groupboxPasswordRecovery.Text = "PASSWORD RECOVERY";
@@ -174,7 +175,7 @@
             this.pnlNewPass.Controls.Add(this.label7);
             this.pnlNewPass.Controls.Add(this.txtNewPassword);
             this.pnlNewPass.Controls.Add(this.label5);
-            this.pnlNewPass.Location = new System.Drawing.Point(33, 21);
+            this.pnlNewPass.Location = new System.Drawing.Point(34, 100);
             this.pnlNewPass.Name = "pnlNewPass";
             this.pnlNewPass.Size = new System.Drawing.Size(414, 195);
             this.pnlNewPass.TabIndex = 6;
@@ -239,7 +240,7 @@
             // 
             // btnRecovery
             // 
-            this.btnRecovery.Location = new System.Drawing.Point(192, 154);
+            this.btnRecovery.Location = new System.Drawing.Point(199, 215);
             this.btnRecovery.Name = "btnRecovery";
             this.btnRecovery.Size = new System.Drawing.Size(75, 23);
             this.btnRecovery.TabIndex = 5;
@@ -249,7 +250,7 @@
             // 
             // txtRecoveryCode
             // 
-            this.txtRecoveryCode.Location = new System.Drawing.Point(126, 116);
+            this.txtRecoveryCode.Location = new System.Drawing.Point(133, 177);
             this.txtRecoveryCode.Name = "txtRecoveryCode";
             this.txtRecoveryCode.Size = new System.Drawing.Size(227, 22);
             this.txtRecoveryCode.TabIndex = 4;
@@ -257,7 +258,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 90);
+            this.label2.Location = new System.Drawing.Point(154, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 16);
             this.label2.TabIndex = 3;
@@ -265,7 +266,7 @@
             // 
             // pnlLogin
             // 
-            this.pnlLogin.Controls.Add(this.btnTogglePassword);
+            this.pnlLogin.Controls.Add(this.groupboxPasswordRecovery);
             this.pnlLogin.Controls.Add(this.lblForgotPassword);
             this.pnlLogin.Controls.Add(this.lblSignUp);
             this.pnlLogin.Controls.Add(this.label1);
@@ -299,7 +300,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1536, 842);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.groupboxPasswordRecovery);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
