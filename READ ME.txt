@@ -1,4 +1,38 @@
-Test Logins:
+## Database Setup
+
+1. Open SQL Server Management Studio (SSMS) - SSMS2022(USED IN PROJECT)
+2. Connect to your local server (e.g. DESKTOP-XXXX\SQLEXPRESS)
+3. Open the file `database_setup.sql`
+4. Execute the script
+
+NOTE: Opening and running the Solution file once done that step should be enough to run the project successfully, but if there is still an issue please do the next steps:
+
+## Configure Application
+
+1. Open the project in Visual Studio (VS2026 USED IN PROJECT)
+2. Go to App.config
+3. Update the connection string:
+
+   Data Source=YOUR_SERVER_NAME;
+   Initial Catalog=YourDatabaseName;
+   Integrated Security=True;
+
+Example:
+   Data Source=DESKTOP-ABC123\SQLEXPRESS;
+   Initial Catalog=DeveloperApplication;
+   Integrated Security=True;
+
+--------------------------------------------------------------------
+## Test Logins
 
 Email: naidoo.migyle@gmail.com
 Password: Dev@11!code
+
+--------------------------------------------------------------------
+##To test Password Recovery:
+
+1.Run Program
+2.Welcome>Login>SignUp
+3.Add new user details
+	3.1. Ensure the new user email address is one that you have access to so that		so that the recovery code can be sent to that email address.
+4. Login> Forgot Password > Enter email address of new user created.
