@@ -16,6 +16,7 @@ namespace DeveloperApplication.Business
         {
             InitializeComponent();
             InitializeAdapters();
+            gbLeaderboard.Parent = pictureBox1;
         }
 
         private void InitializeAdapters()
@@ -207,6 +208,8 @@ namespace DeveloperApplication.Business
 
             int displayCount = Math.Min(data.Rows.Count, (int)nudTopCount.Value);
 
+
+
             for (int i = 0; i < displayCount; i++)
             {
                 var row = data[i];
@@ -218,6 +221,7 @@ namespace DeveloperApplication.Business
                 {
                     developerName = developerName.Substring(0, 18) + "...";
                 }
+
 
                 int pointIndex = series.Points.AddXY(developerName, completedProjects);
              

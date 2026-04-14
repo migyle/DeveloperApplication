@@ -16,7 +16,10 @@ namespace DeveloperApplication.Business
         public frmOtherProjects()
         {
             InitializeComponent();
-            
+            groupBox1.Parent = pictureBox1;
+            groupBox3.Parent = pictureBox1;
+            label22.Parent = pictureBox1;
+
         }
 
         private void frmOtherProjects_Load(object sender, EventArgs e)

@@ -20,6 +20,7 @@ namespace DeveloperApplication.Interface
         public frmSignUp()
         {
             InitializeComponent();
+            panel1.Parent = pictureBox1;
         }
 
         private void lblLogin_Click(object sender, EventArgs e)
@@ -148,6 +149,16 @@ namespace DeveloperApplication.Interface
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

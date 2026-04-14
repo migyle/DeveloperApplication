@@ -17,6 +17,8 @@ namespace DeveloperApplication.Business
         public frmMyProjects()
         {
             InitializeComponent();
+            panel1.Parent = pictureBox1;
+            panel2.Parent = pictureBox1;
         }
 
         private void frmMyProjects_Load(object sender, EventArgs e)

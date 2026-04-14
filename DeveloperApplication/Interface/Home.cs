@@ -37,7 +37,7 @@ namespace DeveloperApplication.Interface
 
 
             myForm.Show();
-            //pictureBox1.SendToBack();
+            pictureBox1.SendToBack();
         }
         public void PerformLogin() {
 
@@ -68,9 +68,9 @@ namespace DeveloperApplication.Interface
                 child.Close();
             }
 
-            //pictureBox1.BringToFront();
-            //pictureBox1.Dock = DockStyle.Fill;
-            //msMain.Parent = pictureBox1;
+            pictureBox1.BringToFront();
+            pictureBox1.Dock = DockStyle.Fill;
+            msHome.Parent = pictureBox1;
         }
 
         private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,9 +106,9 @@ namespace DeveloperApplication.Interface
                 child.Close();
             }
 
-            //pictureBox1.BringToFront();
-            //pictureBox1.Dock = DockStyle.Fill;
-            //msMain.Parent = pictureBox1;
+            pictureBox1.BringToFront();
+            pictureBox1.Dock = DockStyle.Fill;
+            msHome.Parent = pictureBox1;
 
             MessageBox.Show("You have been logged out successfully.", "Logged Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

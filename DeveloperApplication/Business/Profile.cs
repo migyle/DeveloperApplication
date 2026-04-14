@@ -17,6 +17,8 @@ namespace DeveloperApplication.Business
         public frmProfile()
         {
             InitializeComponent();
+            lblName.Parent = pictureBox1;
+            grpDetails.Parent = pictureBox1;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

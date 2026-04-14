@@ -23,6 +23,7 @@ namespace DeveloperApplication
         public frmLogin()
         {
             InitializeComponent();
+            pnlLogin.Parent = pictureBox1;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
