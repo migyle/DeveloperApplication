@@ -84,7 +84,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password, status
               <Mapping SourceColumn="status" DataSetColumn="status" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountEmail" Modifier="Public" Name="CountEmail" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="CountEmail">
+              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountEmail" Modifier="Public" Name="CountEmail" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CountEmail">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(email) FROM Developer WHERE email=@email</CommandText>
@@ -157,7 +157,7 @@ WHERE name LIKE '%'+@name+'%' OR surname LIKE '%'+@name+'%' </CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [Developer] ([name], [surname], [email], [dateOfBirth], [contactNumber], [password], [status]) VALUES (@name, @surname, @email, @dateOfBirth, @contactNumber, @password, @status);
@@ -174,7 +174,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDetails" Modifier="Public" Name="UpdateDetails" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="UpdateDetails">
+              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDetails" Modifier="Public" Name="UpdateDetails" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateDetails">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [Developer] SET [name] = @name, [surname] = @surname, [email] = @email, [dateOfBirth] = @dateOfBirth, [contactNumber] = @contactNumber, [status] = @status WHERE ([devID] = @Original_devID)</CommandText>
@@ -201,7 +201,7 @@ SELECT devID, name, surname, email, dateOfBirth, contactNumber, password,status 
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [Developer] SET [password] = @password WHERE ([devID] = @Original_devID)</CommandText>
@@ -814,100 +814,6 @@ WHERE c.commentID = @commentID</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DeveloperLeaderboardTableAdapter" GeneratorDataComponentClassName="DeveloperLeaderboardTableAdapter" Name="DeveloperLeaderboard" UserDataComponentName="DeveloperLeaderboardTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectName="DeveloperApplication.dbo.Developer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDeveloperLeaderboard" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillDeveloperLeaderboard" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="FillDeveloperLeaderboard">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>    SELECT TOP (@TopCount)
-        d.devID,
-        d.name,
-        d.surname,
-        d.email,
-        d.status AS DeveloperStatus,
-
-        COUNT(p.projID) AS TotalProjectsCompleted,
-        SUM(CASE WHEN p.isCompleted = 1 THEN 1 ELSE 0 END) AS CompletedProjects,
-        SUM(CASE WHEN p.isCompleted = 0 AND p.status = 'Active' THEN 1 ELSE 0 END) AS ActiveProjects,
-        SUM(CASE WHEN p.status = 'Archived' THEN 1 ELSE 0 END) AS ArchivedProjects,
-        
-        CASE 
-            WHEN COUNT(p.projID) = 0 THEN 0
-            ELSE ROUND(100.0 * SUM(CASE WHEN p.isCompleted = 1 THEN 1 ELSE 0 END) / COUNT(p.projID), 1)
-        END AS CompletionRate
-        
-    FROM Developer d
-    
-    LEFT JOIN Project p ON d.devID = p.devID
-
-    WHERE 
-    (
-        @FilterType = 'All' OR d.status = @FilterType
-    )
-    AND
-    (
-        @SearchTerm IS NULL 
-        OR d.name LIKE '%' + @SearchTerm + '%' 
-        OR d.surname LIKE '%' + @SearchTerm + '%'
-        OR d.email LIKE '%' + @SearchTerm + '%'
-    )
-    
-    GROUP BY d.devID, d.name, d.surname, d.email, d.status
-    HAVING COUNT(p.projID) &gt; 0
-    ORDER BY CompletedProjects DESC, CompletionRate DESC</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="TopCount" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Int32" Direction="Input" ParameterName="@TopCount" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="FilterType" ColumnName="status" DataSourceName="DeveloperApplication.dbo.Developer" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@FilterType" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DeveloperStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="SearchTerm" ColumnName="name" DataSourceName="DeveloperApplication.dbo.Developer" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@SearchTerm" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="devID" DataSetColumn="devID" />
-              <Mapping SourceColumn="name" DataSetColumn="name" />
-              <Mapping SourceColumn="surname" DataSetColumn="surname" />
-              <Mapping SourceColumn="email" DataSetColumn="email" />
-              <Mapping SourceColumn="DeveloperStatus" DataSetColumn="DeveloperStatus" />
-              <Mapping SourceColumn="TotalProjectsCompleted" DataSetColumn="TotalProjectsCompleted" />
-              <Mapping SourceColumn="CompletedProjects" DataSetColumn="CompletedProjects" />
-              <Mapping SourceColumn="ActiveProjects" DataSetColumn="ActiveProjects" />
-              <Mapping SourceColumn="ArchivedProjects" DataSetColumn="ArchivedProjects" />
-              <Mapping SourceColumn="CompletionRate" DataSetColumn="CompletionRate" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProjectTrendsTableAdapter" GeneratorDataComponentClassName="ProjectTrendsTableAdapter" Name="ProjectTrends" UserDataComponentName="ProjectTrendsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="DeveloperApplicationConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillProjectCompletionTrends" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillProjectCompletionTrends" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="FillProjectCompletionTrends">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>    SELECT 
-        YEAR(startDate) AS Year,
-        MONTH(startDate) AS Month,
-        COUNT(*) AS ProjectsStarted,
-        SUM(CASE WHEN isCompleted = 1 THEN 1 ELSE 0 END) AS ProjectsCompleted,
-        ROUND(100.0 * SUM(CASE WHEN isCompleted = 1 THEN 1 ELSE 0 END) / COUNT(*), 1) AS CompletionRate
-        
-    FROM Project
-    WHERE status = 'Active' OR isCompleted = 1
-    GROUP BY YEAR(startDate), MONTH(startDate)
-    ORDER BY Year DESC, Month DESC</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Year" DataSetColumn="Year" />
-              <Mapping SourceColumn="Month" DataSetColumn="Month" />
-              <Mapping SourceColumn="ProjectsStarted" DataSetColumn="ProjectsStarted" />
-              <Mapping SourceColumn="ProjectsCompleted" DataSetColumn="ProjectsCompleted" />
-              <Mapping SourceColumn="CompletionRate" DataSetColumn="CompletionRate" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1116,57 +1022,6 @@ WHERE c.commentID = @commentID</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DeveloperLeaderboard" msprop:Generator_RowEvHandlerName="DeveloperLeaderboardRowChangeEventHandler" msprop:Generator_RowDeletedName="DeveloperLeaderboardRowDeleted" msprop:Generator_RowDeletingName="DeveloperLeaderboardRowDeleting" msprop:Generator_RowEvArgName="DeveloperLeaderboardRowChangeEvent" msprop:Generator_TablePropName="DeveloperLeaderboard" msprop:Generator_RowChangedName="DeveloperLeaderboardRowChanged" msprop:Generator_RowChangingName="DeveloperLeaderboardRowChanging" msprop:Generator_TableClassName="DeveloperLeaderboardDataTable" msprop:Generator_RowClassName="DeveloperLeaderboardRow" msprop:Generator_TableVarName="tableDeveloperLeaderboard" msprop:Generator_UserTableName="DeveloperLeaderboard">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="devID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="devID" msprop:Generator_ColumnPropNameInTable="devIDColumn" msprop:Generator_ColumnVarNameInTable="columndevID" msprop:Generator_UserColumnName="devID" type="xs:int" />
-              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="surname" msprop:Generator_ColumnPropNameInRow="surname" msprop:Generator_ColumnPropNameInTable="surnameColumn" msprop:Generator_ColumnVarNameInTable="columnsurname" msprop:Generator_UserColumnName="surname">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="email" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_UserColumnName="email">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DeveloperStatus" msprop:Generator_ColumnPropNameInRow="DeveloperStatus" msprop:Generator_ColumnPropNameInTable="DeveloperStatusColumn" msprop:Generator_ColumnVarNameInTable="columnDeveloperStatus" msprop:Generator_UserColumnName="DeveloperStatus">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TotalProjectsCompleted" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="TotalProjectsCompleted" msprop:Generator_ColumnPropNameInTable="TotalProjectsCompletedColumn" msprop:Generator_ColumnVarNameInTable="columnTotalProjectsCompleted" msprop:Generator_UserColumnName="TotalProjectsCompleted" type="xs:int" minOccurs="0" />
-              <xs:element name="CompletedProjects" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="CompletedProjects" msprop:Generator_ColumnPropNameInTable="CompletedProjectsColumn" msprop:Generator_ColumnVarNameInTable="columnCompletedProjects" msprop:Generator_UserColumnName="CompletedProjects" type="xs:int" minOccurs="0" />
-              <xs:element name="ActiveProjects" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ActiveProjects" msprop:Generator_ColumnPropNameInTable="ActiveProjectsColumn" msprop:Generator_ColumnVarNameInTable="columnActiveProjects" msprop:Generator_UserColumnName="ActiveProjects" type="xs:int" minOccurs="0" />
-              <xs:element name="ArchivedProjects" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ArchivedProjects" msprop:Generator_ColumnPropNameInTable="ArchivedProjectsColumn" msprop:Generator_ColumnVarNameInTable="columnArchivedProjects" msprop:Generator_UserColumnName="ArchivedProjects" type="xs:int" minOccurs="0" />
-              <xs:element name="CompletionRate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="CompletionRate" msprop:Generator_ColumnPropNameInTable="CompletionRateColumn" msprop:Generator_ColumnVarNameInTable="columnCompletionRate" msprop:Generator_UserColumnName="CompletionRate" type="xs:decimal" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ProjectTrends" msprop:Generator_RowEvHandlerName="ProjectTrendsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectTrendsRowDeleted" msprop:Generator_RowDeletingName="ProjectTrendsRowDeleting" msprop:Generator_RowEvArgName="ProjectTrendsRowChangeEvent" msprop:Generator_TablePropName="ProjectTrends" msprop:Generator_RowChangedName="ProjectTrendsRowChanged" msprop:Generator_RowChangingName="ProjectTrendsRowChanging" msprop:Generator_TableClassName="ProjectTrendsDataTable" msprop:Generator_RowClassName="ProjectTrendsRow" msprop:Generator_TableVarName="tableProjectTrends" msprop:Generator_UserTableName="ProjectTrends">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
-              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_UserColumnName="Month" type="xs:int" minOccurs="0" />
-              <xs:element name="ProjectsStarted" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ProjectsStarted" msprop:Generator_ColumnPropNameInTable="ProjectsStartedColumn" msprop:Generator_ColumnVarNameInTable="columnProjectsStarted" msprop:Generator_UserColumnName="ProjectsStarted" type="xs:int" minOccurs="0" />
-              <xs:element name="ProjectsCompleted" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ProjectsCompleted" msprop:Generator_ColumnPropNameInTable="ProjectsCompletedColumn" msprop:Generator_ColumnVarNameInTable="columnProjectsCompleted" msprop:Generator_UserColumnName="ProjectsCompleted" type="xs:int" minOccurs="0" />
-              <xs:element name="CompletionRate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="CompletionRate" msprop:Generator_ColumnPropNameInTable="CompletionRateColumn" msprop:Generator_ColumnVarNameInTable="columnCompletionRate" msprop:Generator_UserColumnName="CompletionRate" type="xs:decimal" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1188,10 +1043,6 @@ WHERE c.commentID = @commentID</CommandText>
     <xs:unique name="Milestone_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Milestone" />
       <xs:field xpath="mstns:milestoneID" />
-    </xs:unique>
-    <xs:unique name="DeveloperLeaderboard_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DeveloperLeaderboard" />
-      <xs:field xpath="mstns:devID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
